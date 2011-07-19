@@ -1,0 +1,44 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RTSafe.RTDP.Permission", "RTSafe.RTDP.Permission\RTSafe.RTDP.Permission.csproj", "{772BA724-05F5-47CF-9588-FA20D7C638CC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestWeb", "TestWeb\TestWeb.csproj", "{6C618C33-078B-4FC2-9A0B-AF67A40140C9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RTSafe.RTDP.MVC", "RTSafe.RTDP.MVC\RTSafe.RTDP.MVC.csproj", "{B590F3F6-313B-446B-B491-F9D5385A0EB7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RTSafe.RTDP.Permission.Models", "RTSafe.RTDP.Permission.Models\RTSafe.RTDP.Permission.Models.csproj", "{BFD65388-0692-417B-B966-52787CAA83E1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestWeb2", "TestWeb2\TestWeb2.csproj", "{4882BC10-C0E1-4037-A398-A06557B6DC12}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{772BA724-05F5-47CF-9588-FA20D7C638CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{772BA724-05F5-47CF-9588-FA20D7C638CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{772BA724-05F5-47CF-9588-FA20D7C638CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{772BA724-05F5-47CF-9588-FA20D7C638CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C618C33-078B-4FC2-9A0B-AF67A40140C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C618C33-078B-4FC2-9A0B-AF67A40140C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C618C33-078B-4FC2-9A0B-AF67A40140C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C618C33-078B-4FC2-9A0B-AF67A40140C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B590F3F6-313B-446B-B491-F9D5385A0EB7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B590F3F6-313B-446B-B491-F9D5385A0EB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B590F3F6-313B-446B-B491-F9D5385A0EB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B590F3F6-313B-446B-B491-F9D5385A0EB7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BFD65388-0692-417B-B966-52787CAA83E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFD65388-0692-417B-B966-52787CAA83E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFD65388-0692-417B-B966-52787CAA83E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BFD65388-0692-417B-B966-52787CAA83E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4882BC10-C0E1-4037-A398-A06557B6DC12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4882BC10-C0E1-4037-A398-A06557B6DC12}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4882BC10-C0E1-4037-A398-A06557B6DC12}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4882BC10-C0E1-4037-A398-A06557B6DC12}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

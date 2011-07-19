@@ -1,0 +1,13 @@
+D:\Work\RTDP\TestWeb2\bin\TestWeb2.dll
+D:\Work\RTDP\TestWeb2\bin\TestWeb2.pdb
+D:\Work\RTDP\TestWeb2\bin\EntityFramework.dll
+D:\Work\RTDP\TestWeb2\bin\RTSafe.RTDP.MVC.dll
+D:\Work\RTDP\TestWeb2\bin\RTSafe.RTDP.Permission.dll
+D:\Work\RTDP\TestWeb2\bin\RTSafe.RTDP.Permission.Models.dll
+D:\Work\RTDP\TestWeb2\bin\RTSafe.RTDP.MVC.pdb
+D:\Work\RTDP\TestWeb2\bin\RTSafe.RTDP.Permission.Models.pdb
+D:\Work\RTDP\TestWeb2\bin\RTSafe.RTDP.Permission.pdb
+D:\Work\RTDP\TestWeb2\bin\EntityFramework.xml
+D:\Work\RTDP\TestWeb2\obj\Debug\ResolveAssemblyReference.cache
+D:\Work\RTDP\TestWeb2\obj\Debug\TestWeb2.dll
+D:\Work\RTDP\TestWeb2\obj\Debug\TestWeb2.pdb

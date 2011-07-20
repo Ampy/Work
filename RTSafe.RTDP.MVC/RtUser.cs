@@ -33,7 +33,7 @@ namespace RTSafe.RTDP.MVC
 
             RTSafe.RTDP.Permission.Models.Operation operation= new RTSafe.RTDP.Permission.Models.Operation();
 
-            operation.Id = Guid.Parse("{6396B227-ACD8-475A-9865-F38FD6A19556}");
+            operation.ID = Guid.Parse("{6396B227-ACD8-475A-9865-F38FD6A19556}");
             role.Operations.Add(operation);
 
             roleList.Add(role);
@@ -79,7 +79,7 @@ namespace RTSafe.RTDP.MVC
 
            foreach (var r in roleList)
            {
-               hasPermission = r.Operations.SingleOrDefault(c => c.Id == perId) != null;
+               hasPermission = r.Operations.SingleOrDefault(c => c.ID == perId) != null;
            }
            return hasPermission;
        }

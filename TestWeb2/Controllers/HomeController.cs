@@ -20,8 +20,8 @@ namespace TestWeb2.Controllers
         [CheckPermission("{6396B227-ACD8-475A-9865-F38FD6A19559}")]
         public ActionResult About()
         {
-            ViewBag.CanDelete = Model.Validate("aaa");
-            ViewBag.CanAdd = false;
+            //ViewBag.CanDelete = Model.Validate("aaa");
+            //ViewBag.CanAdd = false;
 
 
 

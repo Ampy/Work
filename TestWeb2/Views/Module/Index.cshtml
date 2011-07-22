@@ -1,41 +1,57 @@
 ﻿@model IEnumerable<RTSafe.RTDP.Permission.Models.Module>
-
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "模块列表";
 }
-
-<h2>Index</h2>
-
+<h2>
+    模块列表</h2>
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("新建模块", "Create")
 </p>
 <table>
     <tr>
         <th>
-            Name
+            名称
         </th>
         <th>
-            Description
+            描述
         </th>
-        <th></th>
+        <th>
+            操作
+        </th>
     </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Description)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID }) |
-            @Html.ActionLink("Operation", "Index", "Operation", new { id = item.ID },null)
-            
-        </td>
-    </tr>
-}
-
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.ActionLink("编辑", "Edit", new { id = item.ModuleId }) |
+                @Html.ActionLink("详情", "Details", new { id = item.ModuleId }) |
+                @Html.ActionLink("删除", "Delete", new { id = item.ModuleId }) |
+                @Html.ActionLink("权限项", "Index", "Operation", new { id = item.ModuleId }, new { @target = "_blank" })
+            </td>
+        </tr>
+        <tr>
+        <td></td>
+        <td colspan="2">
+            <table width="100%">
+                @foreach (var m in item.Operations)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => m.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => m.Description)
+                        </td>
+                    </tr>
+                }
+            </table>
+            </td>
+        </tr>
+    }
 </table>

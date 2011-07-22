@@ -1,25 +1,30 @@
 ﻿@model RTSafe.RTDP.Permission.Models.Module
-
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "详情";
 }
-
-<h2>Details</h2>
-
+<h2>
+    @ViewBag.Title</h2>
 <fieldset>
-    <legend>Module</legend>
-
-    <div class="display-label">Name</div>
+    <legend>模块</legend>
+    <div class="display-label">
+        @Html.LabelFor(model => model.ModuleId)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ModuleId)
+    </div>
+    <div class="display-label">
+        @Html.LabelFor(model => model.Name)
+    </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.Name)
     </div>
-
-    <div class="display-label">Description</div>
+    <div class="display-label">
+        @Html.LabelFor(model => model.Description)</div>
     <div class="display-field">
         @Html.DisplayFor(model => model.Description)
     </div>
 </fieldset>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id=Model.ID }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("编辑", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("返回列表", "Index")
 </p>

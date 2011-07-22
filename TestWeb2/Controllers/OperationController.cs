@@ -15,7 +15,7 @@ namespace TestWeb2.Controllers
         private RTDPDbContext db = new RTDPDbContext();
 
         //
-        // GET: /Operation/
+        // GET: /Operation/        
 
         public ViewResult Index(Guid id)
         {
@@ -49,7 +49,7 @@ namespace TestWeb2.Controllers
         {
             if (ModelState.IsValid)
             {
-                operation.ID = Guid.NewGuid();
+                operation.OperationId = Guid.NewGuid();
                 db.Operations.Add(operation);
                 db.SaveChanges();
                 return RedirectToAction("Index/" + operation.ModuleId.ToString());  
@@ -108,5 +108,7 @@ namespace TestWeb2.Controllers
             db.Dispose();
             base.Dispose(disposing);
         }
+
+  
     }
 }

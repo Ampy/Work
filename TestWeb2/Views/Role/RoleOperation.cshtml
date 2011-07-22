@@ -1,0 +1,46 @@
+﻿@model IEnumerable<RTSafe.RTDP.Permission.Models.Operation>
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            ModuleId
+        </th>
+        <th>
+            Name
+        </th>
+        <th>
+            Description
+        </th>
+        <th>
+            hasOperation
+        </th>
+        <th>
+            CurrentRoleId
+        </th>
+        <th>
+        </th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ModuleId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.EditorFor(modelItem => item.hasOperation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CurrentRoleId)
+            </td>
+
+        </tr>
+    }
+</table>

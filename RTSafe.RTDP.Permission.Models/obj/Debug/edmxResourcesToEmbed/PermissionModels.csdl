@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="PermissionModels" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+  <EntityContainer Name="PermissionModelsContainer" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Module" EntityType="PermissionModels.Module" />
+    <EntitySet Name="Operation" EntityType="PermissionModels.Operation" />
+    <EntitySet Name="Role" EntityType="PermissionModels.Role" />
+    <EntitySet Name="RoleOperation" EntityType="PermissionModels.RoleOperation" />
+    <AssociationSet Name="RoleOperation1" Association="PermissionModels.RoleOperation1">
+      <End Role="Role" EntitySet="Role" />
+      <End Role="Operation" EntitySet="Operation" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Module">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Guid" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Name" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Description" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Operation">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Guid" Name="ID" Nullable="false" />
+    <Property Type="Guid" Name="ModuleId" Nullable="false" />
+    <Property Type="String" Name="Name" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Description" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Role" Relationship="PermissionModels.RoleOperation1" FromRole="Operation" ToRole="Role" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Guid" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Name" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Description" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Operation" Relationship="PermissionModels.RoleOperation1" FromRole="Role" ToRole="Operation" />
+  </EntityType>
+  <EntityType Name="RoleOperation">
+    <Key>
+      <PropertyRef Name="RoleId" />
+      <PropertyRef Name="OperationId" />
+    </Key>
+    <Property Type="Guid" Name="RoleId" Nullable="false" />
+    <Property Type="Guid" Name="OperationId" Nullable="false" />
+  </EntityType>
+  <Association Name="RoleOperation1">
+    <End Type="PermissionModels.Role" Role="Role" Multiplicity="*" />
+    <End Type="PermissionModels.Operation" Role="Operation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Operation">
+        <PropertyRef Name="ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs" Space="C-S">
+  <Alias Key="Model" Value="PermissionModels" />
+  <Alias Key="Target" Value="PermissionModels.Store" />
+  <EntityContainerMapping CdmEntityContainer="PermissionModelsContainer" StorageEntityContainer="PermissionModelsStoreContainer">
+    <EntitySetMapping Name="Module">
+      <EntityTypeMapping TypeName="PermissionModels.Module">
+        <MappingFragment StoreEntitySet="Module">
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Operation">
+      <EntityTypeMapping TypeName="PermissionModels.Operation">
+        <MappingFragment StoreEntitySet="Operation">
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ModuleId" ColumnName="ModuleId" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Role">
+      <EntityTypeMapping TypeName="PermissionModels.Role">
+        <MappingFragment StoreEntitySet="Role">
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RoleOperation">
+      <EntityTypeMapping TypeName="PermissionModels.RoleOperation">
+        <MappingFragment StoreEntitySet="RoleOperation">
+          <ScalarProperty Name="OperationId" ColumnName="OperationId" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

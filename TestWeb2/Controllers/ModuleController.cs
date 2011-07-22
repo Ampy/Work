@@ -19,7 +19,7 @@ namespace TestWeb2.Controllers
 
         public ViewResult Index()
         {
-            var m = db.Modules;
+            var m = db.Modules.Include(c=>c.Operations);
             return View(m);
         }
 
@@ -48,7 +48,7 @@ namespace TestWeb2.Controllers
         {
             if (ModelState.IsValid)
             {
-                module.ID = Guid.NewGuid();
+                module.ModuleId = Guid.NewGuid();
                 db.Modules.Add(module);
                 db.SaveChanges();
                 return RedirectToAction("Index");  

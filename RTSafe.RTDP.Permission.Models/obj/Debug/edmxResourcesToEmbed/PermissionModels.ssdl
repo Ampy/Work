@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PermissionModels.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="PermissionModelsStoreContainer">
+    <EntitySet Name="Module" EntityType="PermissionModels.Store.Module" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Operation" EntityType="PermissionModels.Store.Operation" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Role" EntityType="PermissionModels.Store.Role" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="RoleOperation" EntityType="PermissionModels.Store.RoleOperation" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="Module">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Description" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Operation">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ModuleId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Description" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="20" />
+    <Property Name="Description" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="RoleOperation">
+    <Key>
+      <PropertyRef Name="RoleId" />
+      <PropertyRef Name="OperationId" />
+    </Key>
+    <Property Name="RoleId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="OperationId" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+</Schema>

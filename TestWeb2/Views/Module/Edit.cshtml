@@ -1,10 +1,10 @@
 ﻿@model RTSafe.RTDP.Permission.Models.Module
 
 @{
-    ViewBag.Title = "Edit";
+    ViewBag.Title = "编辑";
 }
 
-<h2>Edit</h2>
+<h2>@ViewBag.Title</h2>
 
 <script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
 <script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
@@ -12,9 +12,9 @@
 @using (Html.BeginForm()) {
     @Html.ValidationSummary(true)
     <fieldset>
-        <legend>Module</legend>
+        <legend>模块</legend>
 
-        @Html.HiddenFor(model => model.ID)
+        @Html.HiddenFor(model => model.ModuleId)
 
         <div class="editor-label">
             @Html.LabelFor(model => model.Name)
@@ -33,11 +33,11 @@
         </div>
 
         <p>
-            <input type="submit" value="Save" />
+            <input type="submit" value="保存" />
         </p>
     </fieldset>
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("返回列表", "Index")
 </div>

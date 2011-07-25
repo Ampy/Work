@@ -89,17 +89,26 @@ namespace TestWeb2.Controllers
             return View(role);
         }
 
-        //
-        // POST: /Role/Delete/5
-
-        [HttpPost, ActionName("Delete")]
-        public ActionResult DeleteConfirmed(Guid id)
+        [HttpPost]
+        public ActionResult Delete(Role role)
         {
-            Role role = db.Roles.Find(id);
+            //Role role = db.Roles.Find(id);
             db.Roles.Remove(role);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+
+        //
+        // POST: /Role/Delete/5
+
+        //[HttpPost, ActionName("Delete")]
+        //public ActionResult DeleteConfirmed(Guid id)
+        //{
+        //    Role role = db.Roles.Find(id);
+        //    db.Roles.Remove(role);
+        //    db.SaveChanges();
+        //    return RedirectToAction("Index");
+        //}
 
         protected override void Dispose(bool disposing)
         {
@@ -108,6 +117,33 @@ namespace TestWeb2.Controllers
         }
 
         public ActionResult RoleOperation(Guid roleId)
+        {
+            Role role = db.Roles.Find(roleId);
+
+            List<Module> modules = db.Modules.Include(c=>c.Operations).ToList();
+
+            foreach (var m in modules)
+            {
+                foreach (var o in m.Operations)
+                {
+                    o.hasOperation = role.Operations.SingleOrDefault(c => c.OperationId == o.OperationId) == null ? false : true;
+                }
+            }
+
+            return View(modules);
+
+            //ICollection<Operation> ops = db.Operations.ToList();
+
+            //foreach (var o in ops)
+            //{
+            //    o.hasOperation = role.Operations.SingleOrDefault(c => c.OperationId == o.OperationId) == null ? false : true;
+            //}
+
+            //return View(ops);
+        }
+
+        [HttpPost]
+        public ActionResult RoleOperation(Guid roleId, Module modules)
         {
             //Role role = db.Roles.Include(o => o.Operations).SingleOrDefault(c => c.ID == roleId);
             //List<Guid> ros = db.RoleOperations.Where(c => c.RoleId == roleId).Select(c => c.OperationId).ToList();
@@ -121,16 +157,39 @@ namespace TestWeb2.Controllers
             //    else
             //        o.hasOperation = false;
             //}
-            Role role = db.Roles.Find(roleId);
+            //Role role = db.Roles.Find(roleId);
 
-            ICollection<Operation> ops = db.Operations.ToList();
+            //ICollection<Operation> ops = db.Operations.ToList();
 
-            foreach (var o in ops)
-            {
-                o.hasOperation = role.Operations.SingleOrDefault(c => c.OperationId == o.OperationId) == null ? false : true;
-            }
+            //foreach (var o in ops)
+            //{
+            //    o.hasOperation = role.Operations.SingleOrDefault(c => c.OperationId == o.OperationId) == null ? false : true;
+            //}
+            //Role role = db.Roles.Find(roleId);
 
-            return View(ops);
+
+            //List<Operation> delops = role.Operations.ToList();
+
+            //foreach (var m in delops)
+            //{
+            //    role.Operations.Remove(m);    
+            //}
+            //db.SaveChanges();
+
+            //foreach (string opid in collection)
+            //{
+            //    Operation op = db.Operations.Find(opid);
+            //    role.Operations.Add(op);
+            //}
+            //db.SaveChanges();
+
+            //ICollection<Operation> ops = db.Operations.ToList();
+
+            //foreach (var o in ops)
+            //{
+            //    o.hasOperation = role.Operations.SingleOrDefault(c => c.OperationId == o.OperationId) == null ? false : true;
+            //}
+            return View();
         }
     }
 }

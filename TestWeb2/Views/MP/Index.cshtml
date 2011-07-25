@@ -1,0 +1,21 @@
+﻿@model RTSafe.RTDP.Permission.Models.MP
+
+@using (@Html.BeginForm())
+{
+<fieldset>
+    <legend>MP</legend>
+
+    <div class="display-label">Name</div>
+    <div class="display-field">
+        @Html.EditorFor(model => model.Name)
+    </div>
+
+    <div class="display-label">Description</div>
+    <div class="display-field">
+        @Html.EditorFor(model => model.Description)
+    </div>
+</fieldset>
+<p>
+<input type="submit" title="Submit" />
+</p>
+}

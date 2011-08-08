@@ -3,11 +3,14 @@
   <PropertyGroup>
     <ProjectView>ShowAllFiles</ProjectView>
   </PropertyGroup>
+  <PropertyGroup>
+    <ReferencePath>D:\EntLib50Src\Blocks\Common\Src\;D:\EntLib50Src\Blocks\Common\Src\Configuration\;D:\EntLib50Src\Blocks\Logging\;D:\EntLib50Src\Blocks\</ReferencePath>
+  </PropertyGroup>
   <ProjectExtensions>
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <StartPageUrl>Role/Index</StartPageUrl>
+          <StartPageUrl>Menu/Index</StartPageUrl>
           <StartAction>SpecificPage</StartAction>
           <AspNetDebugging>True</AspNetDebugging>
           <SilverlightDebugging>False</SilverlightDebugging>

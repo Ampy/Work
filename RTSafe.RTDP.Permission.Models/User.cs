@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.ComponentModel.DataAnnotations;
 
 namespace RTSafe.RTDP.Permission.Models
 {
@@ -22,11 +23,18 @@ namespace RTSafe.RTDP.Permission.Models
         //    get;
         //    set;
         //}
-
-        public Guid Id { get; set; }
+        [Key]
+        public Guid UserId { get; set; }
         public string Name { get; set; }
         public string Password { get; set; }
 
-        //public virtual List<Operation> Operations { get; set; }
+
+        
+        public virtual Guid UserGroupId { get; set; }
+
+        public virtual List<Role> Roles { get; set; }
+
+        [ForeignKey("UserGroupId")]
+        public virtual UserGroup UserGroup { get; set; }
     }
 }

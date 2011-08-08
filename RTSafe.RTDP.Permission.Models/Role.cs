@@ -10,14 +10,6 @@ namespace RTSafe.RTDP.Permission.Models
     [Table("Role")]
     public class Role
     {
-        //List<Operation> _operations = new List<Operation>();
-  
-        //public List<Operation> Operations
-        //{ 
-        //    get { return _operations; } 
-        //}
-
-
         [Key]
         [Display(Name = "标识")]
         public Guid RoleId { get; set; }
@@ -29,5 +21,8 @@ namespace RTSafe.RTDP.Permission.Models
         public string Description { get; set; }
 
         public virtual ICollection<Operation> Operations { get; set; }
+        public virtual ICollection<User> Users { get; set; }
+        public virtual ICollection<UserGroup> UserGroups { get; set; }
+        public virtual ICollection<Menu> Menus { get; set; }
     }
 }

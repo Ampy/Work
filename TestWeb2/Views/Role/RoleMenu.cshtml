@@ -1,0 +1,71 @@
+﻿@model IEnumerable<RTSafe.RTDP.Permission.Models.Menu>
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+@using (@Html.BeginForm())
+{
+    <table>
+        <tr>
+            <th>
+                ParentMenuId
+            </th>
+            <th>
+                Name
+            </th>
+            <th>
+                Description
+            </th>
+            <th>
+                EntryUrl
+            </th>
+            <th>
+                DisplayOrder
+            </th>
+            <th>
+                hasMenu
+            </th>
+            <th>
+                CurrentRoleId
+            </th>
+            <th>
+            </th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ParentMenuId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EntryUrl)
+                </td>
+                <td>
+                    @*            @Html.EditorFor(modelItem => item.DisplayOrder)*@
+                    @if (item.hasMenu)
+                    {
+                        <input type="checkbox" id="menu" name="menu" value="@item.MenuId" checked="checked") />
+                    }
+                    else
+                    {
+                        <input type="checkbox" id="menu" name="menu" value="@item.MenuId" />
+                    }
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DisplayOrder)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.MenuId }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.MenuId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.MenuId })
+                </td>
+            </tr>
+        }
+    </table>
+    <input type="submit" value="提交" />
+}

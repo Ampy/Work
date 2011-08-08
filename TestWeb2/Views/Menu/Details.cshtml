@@ -1,0 +1,35 @@
+﻿@model RTSafe.RTDP.Permission.Models.Menu
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Menu</legend>
+
+    <div class="display-label">ParentMenu</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ParentMenu.Name)
+    </div>
+
+    <div class="display-label">Name</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Name)
+    </div>
+
+    <div class="display-label">Description</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Description)
+    </div>
+
+    <div class="display-label">EntryUrl</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.EntryUrl)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.MenuId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

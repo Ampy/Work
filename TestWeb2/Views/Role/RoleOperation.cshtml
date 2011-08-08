@@ -45,7 +45,13 @@
                                     @Html.DisplayFor(modelItem => o.Description)
                                 </td>
                                 <td>
-                                    @Html.CheckBoxFor(modelItem => o.hasOperation)
+                                    @if(o.hasOperation)
+                                    {
+                                    <input type="checkbox" id="operation" name="operation" value="@o.OperationId" checked="checked") />
+                                    } 
+                                    else{
+                                    <input type="checkbox" id="operation" name="operation" value="@o.OperationId" />
+                                    }
                                 </td>
                             </tr>
                         }

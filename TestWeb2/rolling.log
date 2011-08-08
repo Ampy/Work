@@ -1,0 +1,83 @@
+﻿----------------------------------------
+Logging Errors & Warnings Error: 6352 : Timestamp: 2011/8/4 7:25:05
+Message: Tracing to LogSource 'Exception' failed. Processing for other sources will continue. See summary information below for more information. Should this problem persist, stop the service and check the configuration file(s) for possible error(s) in the configuration of the categories and sinks.
+
+
+Summary for Enterprise Library Distributor Service:
+======================================
+--> 
+Message: 
+Timestamp: 2011/8/4 7:25:05
+Message: HandlingInstanceID: 34f78b4e-9ef9-4825-9a0c-f1d50904b933
+An exception of type 'System.DivideByZeroException' occurred and was caught.
+----------------------------------------------------------------------------
+08/04/2011 15:24:54
+Type : System.DivideByZeroException, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+Message : 尝试除以零。
+Source : TestWeb2
+Help link : 
+Data : System.Collections.ListDictionaryInternal
+TargetSite : System.Web.Mvc.ViewResult Index()
+Stack Trace :    在 TestWeb2.Controllers.UserGroupController.Index() 位置 D:\Work\RTDP\TestWeb2\Controllers\UserGroupController.cs:行号 28
+
+Additional Info:
+
+MachineName : A-18
+TimeStamp : 2011/8/4 7:24:54
+FullName : Microsoft.Practices.EnterpriseLibrary.ExceptionHandling, Version=5.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35
+AppDomainName : bd03ba5a-7-129569162869707424
+ThreadIdentity : 
+WindowsIdentity : RTSAFEDEV\mengp
+
+Category: Exception
+Priority: 0
+EventId: 100
+Severity: Error
+Title:Enterprise Library Exception Handling
+Machine: A-18
+App Domain: bd03ba5a-7-129569162869707424
+ProcessId: 5188
+Process Name: C:\Program Files\Common Files\Microsoft Shared\DevServer\10.0\WebDev.WebServer40.exe
+Thread Name: 
+Win32 ThreadId:4580
+Extended Properties: 
+--> MachineName: A-18
+--> TimeStamp: 2011/8/4 7:25:05
+--> FullName: Microsoft.Practices.EnterpriseLibrary.Logging, Version=5.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35
+--> AppDomainName: bd03ba5a-7-129569162869707424
+--> WindowsIdentity: RTSAFEDEV\mengp
+
+Exception Information Details:
+======================================
+Exception Type: System.Threading.LockRecursionException
+Message: 此模式下不允许以递归方式获取读取锁定。
+Data: System.Collections.ListDictionaryInternal
+TargetSite: Boolean TryEnterReadLockCore(Int32)
+HelpLink: NULL
+Source: System.Core
+
+StackTrace Information Details: 
+======================================
+   在 System.Threading.ReaderWriterLockSlim.TryEnterReadLockCore(Int32 millisecondsTimeout)
+   在 System.Threading.ReaderWriterLockSlim.TryEnterReadLock(Int32 millisecondsTimeout)
+   在 System.Threading.ReaderWriterLockSlim.EnterReadLock()
+   在 Microsoft.Practices.EnterpriseLibrary.Logging.LoggingUpdateCoordinator.ExecuteReadOperation(Action action) 位置 e:\Builds\EntLib\Latest\Source\Blocks\Logging\Src\Logging\LoggingUpdateCoordinator.cs:行号 109
+   在 Microsoft.Practices.EnterpriseLibrary.Logging.LogWriterImpl.Write(LogEntry log) 位置 e:\Builds\EntLib\Latest\Source\Blocks\Logging\Src\Logging\LogWriterImpl.cs:行号 742
+   在 Microsoft.Practices.EnterpriseLibrary.Logging.Logger.Write(LogEntry log) 位置 e:\Builds\EntLib\Latest\Source\Blocks\Logging\Src\Logging\Logger.cs:行号 303
+   在 RTSafe.RTDP.Logger.ExceptionLogDbTraceListener.TraceData(TraceEventCache eventCache, String source, TraceEventType eventType, Int32 id, Object data) 位置 D:\Work\RTDP\RTSafe.RTDP.Logger\ExceptionLogDbTraceListener.cs:行号 38
+   在 Microsoft.Practices.EnterpriseLibrary.Logging.TraceListeners.TraceListenerWrapper.TraceData(TraceEventCache eventCache, String source, TraceEventType eventType, Int32 id, Object data) 位置 e:\Builds\EntLib\Latest\Source\Blocks\Logging\Src\Logging\TraceListeners\TraceListenerWrapper.cs:行号 92
+   在 Microsoft.Practices.EnterpriseLibrary.Logging.LogSource.TraceData(TraceEventType eventType, Int32 id, LogEntry logEntry, TraceListenerFilter traceListenerFilter, TraceEventCache traceEventCache) 位置 e:\Builds\EntLib\Latest\Source\Blocks\Logging\Src\Logging\LogSource.cs:行号 180
+   在 Microsoft.Practices.EnterpriseLibrary.Logging.LogWriterImpl.ProcessLog(LogEntry log, TraceEventCache traceEventCache) 位置 e:\Builds\EntLib\Latest\Source\Blocks\Logging\Src\Logging\LogWriterImpl.cs:行号 557
+Category: 
+Priority: -1
+EventId: 6352
+Severity: Error
+Title:
+Machine: A-18
+App Domain: bd03ba5a-7-129569162869707424
+ProcessId: 5188
+Process Name: C:\Program Files\Common Files\Microsoft Shared\DevServer\10.0\WebDev.WebServer40.exe
+Thread Name: 
+Win32 ThreadId:4580
+Extended Properties: 
+----------------------------------------

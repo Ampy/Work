@@ -1,0 +1,27 @@
+﻿@model RTSafe.RTDP.Permission.Models.UserGroup
+
+@{
+    ViewBag.Title = "Details";
+
+    @Html.Label(@Session.SessionID)
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>UserGroup</legend>
+
+    <div class="display-label">Name</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Name)
+    </div>
+
+    <div class="display-label">Description</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Description)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.UserGroupID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

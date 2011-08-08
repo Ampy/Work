@@ -12,14 +12,14 @@ namespace TestWeb2.Controllers
 {
     public class RoleController : Controller
     {
-        private RTDPDbContext db = new RTDPDbContext();
-
+        //private RTDPDbContext db = new RTDPDbContext();
+        private RTSafe.RTDP.Permission.BLL.RoleManager rm = new RTSafe.RTDP.Permission.BLL.RoleManager();
         //
         // GET: /Role/
 
         public ViewResult Index()
         {
-            return View(db.Roles.Include(c=>c.Operations));
+            return View(rm.GetRoles(true));
         }
 
         //
@@ -27,7 +27,7 @@ namespace TestWeb2.Controllers
 
         public ViewResult Details(Guid id)
         {
-            Role role = db.Roles.Find(id);
+            Role role = rm.Find(id, true);// db.Roles.Find(id);
             return View(role);
         }
 
@@ -48,8 +48,9 @@ namespace TestWeb2.Controllers
             if (ModelState.IsValid)
             {
                 role.RoleId = Guid.NewGuid();
-                db.Roles.Add(role);
-                db.SaveChanges();
+                //db.Roles.Add(role);
+                //db.SaveChanges();
+                rm.Delete(role);
                 return RedirectToAction("Index");
             }
 
@@ -61,7 +62,7 @@ namespace TestWeb2.Controllers
 
         public ActionResult Edit(Guid id)
         {
-            Role role = db.Roles.Find(id);
+            Role role = rm.Find(id); //db.Roles.Find(id);
             return View(role);
         }
 
@@ -73,8 +74,9 @@ namespace TestWeb2.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(role).State = EntityState.Modified;
-                db.SaveChanges();
+                //db.Entry(role).State = EntityState.Modified;
+                //db.SaveChanges();
+                rm.Edit(role);
                 return RedirectToAction("Index");
             }
             return View(role);
@@ -85,7 +87,7 @@ namespace TestWeb2.Controllers
 
         public ActionResult Delete(Guid id)
         {
-            Role role = db.Roles.Find(id);
+            Role role = rm.Find(id); //db.Roles.Find(id);
             return View(role);
         }
 
@@ -93,8 +95,9 @@ namespace TestWeb2.Controllers
         public ActionResult Delete(Role role)
         {
             //Role role = db.Roles.Find(id);
-            db.Roles.Remove(role);
-            db.SaveChanges();
+            //db.Roles.Remove(role);
+            //db.SaveChanges();
+            rm.Delete(role);
             return RedirectToAction("Index");
         }
 
@@ -112,15 +115,18 @@ namespace TestWeb2.Controllers
 
         protected override void Dispose(bool disposing)
         {
-            db.Dispose();
+            rm.Dispose();
             base.Dispose(disposing);
         }
 
-        public ActionResult RoleOperation(Guid roleId)
+        public ActionResult RoleOperation(string id)
         {
-            Role role = db.Roles.Find(roleId);
+            Guid roleId = Guid.Parse(id);
+            Role role = rm.Find(roleId);
 
-            List<Module> modules = db.Modules.Include(c=>c.Operations).ToList();
+            RTSafe.RTDP.Permission.BLL.ModuleManager mm = new RTSafe.RTDP.Permission.BLL.ModuleManager();
+
+            List<Module> modules = mm.GetAllModules(false);// rm..Include(c=>c.Operations).ToList();
 
             foreach (var m in modules)
             {
@@ -131,65 +137,90 @@ namespace TestWeb2.Controllers
             }
 
             return View(modules);
-
-            //ICollection<Operation> ops = db.Operations.ToList();
-
-            //foreach (var o in ops)
-            //{
-            //    o.hasOperation = role.Operations.SingleOrDefault(c => c.OperationId == o.OperationId) == null ? false : true;
-            //}
-
-            //return View(ops);
         }
 
         [HttpPost]
-        public ActionResult RoleOperation(Guid roleId, Module modules)
+        public ActionResult RoleOperation(string id, FormCollection collection)
         {
-            //Role role = db.Roles.Include(o => o.Operations).SingleOrDefault(c => c.ID == roleId);
-            //List<Guid> ros = db.RoleOperations.Where(c => c.RoleId == roleId).Select(c => c.OperationId).ToList();
-            //List<Guid> hasOperations = db.Operations.Where(c => ros.Contains(c.ID)).Select(m => m.ID).ToList();
+            Guid roleId = Guid.Parse(id);
 
-            //List<Operation> operations = db.Operations.ToList();
-            //foreach (var o in operations)
-            //{
-            //    if (hasOperations.Contains(o.ID))
-            //        o.hasOperation = true;
-            //    else
-            //        o.hasOperation = false;
-            //}
-            //Role role = db.Roles.Find(roleId);
-
-            //ICollection<Operation> ops = db.Operations.ToList();
-
-            //foreach (var o in ops)
-            //{
-            //    o.hasOperation = role.Operations.SingleOrDefault(c => c.OperationId == o.OperationId) == null ? false : true;
-            //}
-            //Role role = db.Roles.Find(roleId);
+            Role role = rm.Find(roleId, true);//.SingleOrDefault(c=>c.RoleId==roleId);
 
 
-            //List<Operation> delops = role.Operations.ToList();
+            List<Operation> delops = role.Operations.ToList();
 
-            //foreach (var m in delops)
-            //{
-            //    role.Operations.Remove(m);    
-            //}
-            //db.SaveChanges();
+            foreach (var m in delops)
+            {
+                role.Operations.Remove(m);
+            }
+            //rm.SaveChanges();
+            rm.Edit(role);
+            if (collection["operation"] != null)
+            {
+                //RTSafe.RTDP.Permission.BLL.OperationManager om = new RTSafe.RTDP.Permission.BLL.OperationManager();
+                foreach (string opid in collection["operation"].Split(','))
+                {
+                    //Operation op = om.Find(Guid.Parse(opid));
+                    //role.Operations.Add(op);
+                    rm.AddOperation(role, opid);
+                }
+                //db.SaveChanges();
+                rm.Edit(role);
+                //om.Dispose();
+            }
+           
+            return RedirectToAction("RoleOperation/" + @roleId.ToString());
+        }
 
-            //foreach (string opid in collection)
-            //{
-            //    Operation op = db.Operations.Find(opid);
-            //    role.Operations.Add(op);
-            //}
-            //db.SaveChanges();
+        public ActionResult RoleMenu(string id)
+        {
+            Guid roleId = Guid.Parse(id);
+            Role role = rm.Find(roleId);
 
-            //ICollection<Operation> ops = db.Operations.ToList();
+            RTSafe.RTDP.Permission.BLL.MenuManager mm = new RTSafe.RTDP.Permission.BLL.MenuManager();
+            
+            //List<Module> modules = mm.GetAllModules(false);// rm..Include(c=>c.Operations).ToList();
+            List<Menu> menus = mm.GetMenus();
 
-            //foreach (var o in ops)
-            //{
-            //    o.hasOperation = role.Operations.SingleOrDefault(c => c.OperationId == o.OperationId) == null ? false : true;
-            //}
-            return View();
+                foreach (var o in menus)
+                {
+                    o.hasMenu = role.Menus.SingleOrDefault(c => c.MenuId == o.MenuId) == null ? false : true;
+                }
+
+                return View(menus);
+        }
+
+        [HttpPost]
+        public ActionResult RoleMenu(string id, FormCollection collection)
+        {
+            Guid roleId = Guid.Parse(id);
+
+            Role role = rm.Find(roleId, true);//.SingleOrDefault(c=>c.RoleId==roleId);
+
+
+            List<Menu> delops = role.Menus.ToList();
+
+            foreach (var m in delops)
+            {
+                role.Menus.Remove(m);
+            }
+            //rm.SaveChanges();
+            rm.Edit(role);
+            if (collection["menu"] != null)
+            {
+                //RTSafe.RTDP.Permission.BLL.OperationManager om = new RTSafe.RTDP.Permission.BLL.OperationManager();
+                foreach (string opid in collection["menu"].Split(','))
+                {
+                    //Operation op = om.Find(Guid.Parse(opid));
+                    //role.Operations.Add(op);
+                    rm.AddMenu(role, opid);
+                }
+                //db.SaveChanges();
+                rm.Edit(role);
+                //om.Dispose();
+            }
+
+            return RedirectToAction("RoleMenu/" + @roleId.ToString());
         }
     }
 }

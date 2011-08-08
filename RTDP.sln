@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RTSafe.RTDP.Permission.Mode
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestWeb2", "TestWeb2\TestWeb2.csproj", "{4882BC10-C0E1-4037-A398-A06557B6DC12}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RTSafe.RTDP.Logger", "RTSafe.RTDP.Logger\RTSafe.RTDP.Logger.csproj", "{A7CA7745-8734-492E-AD4F-849CD48FC2E4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +33,10 @@ Global
 		{4882BC10-C0E1-4037-A398-A06557B6DC12}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4882BC10-C0E1-4037-A398-A06557B6DC12}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4882BC10-C0E1-4037-A398-A06557B6DC12}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7CA7745-8734-492E-AD4F-849CD48FC2E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7CA7745-8734-492E-AD4F-849CD48FC2E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7CA7745-8734-492E-AD4F-849CD48FC2E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7CA7745-8734-492E-AD4F-849CD48FC2E4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

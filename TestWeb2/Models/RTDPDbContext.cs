@@ -24,14 +24,14 @@ namespace TestWeb2.Models
 
 
 
-        public DbSet<Role> Roles { get; set; }
+        //public DbSet<Role> Roles { get; set; }
 
 
-        public DbSet<Operation> Operations { get; set; }
+        //public DbSet<Operation> Operations { get; set; }
 
-        public DbSet<User> Users { get; set; }
+        //public DbSet<User> Users { get; set; }
 
-        public DbSet<Module> Modules { get; set; }
+        //public DbSet<Module> Modules { get; set; }
 
         //public DbSet<RoleOperation> RoleOperations { get; set; }
 
@@ -87,7 +87,8 @@ namespace TestWeb2.Models
             //modelBuilder.Conventions.Remove<TypeNameForeignKeyDiscoveryConvention>();
 
             modelBuilder.Entity<Role>().HasMany(b => b.Operations).WithMany(c => c.Roles).Map(m => { m.MapLeftKey("RoleId"); m.MapRightKey("OperationId"); m.ToTable("RoleOperation"); });
-
+            modelBuilder.Entity<Menu>().HasMany(b => b.ChildrenMenus).WithMany(c => c.ChildrenMenus).Map(m => { m.MapLeftKey("MenuId"); m.MapRightKey("ParentMenuId"); m.ToTable("Menu"); });
+      
 
 
             base.OnModelCreating(modelBuilder);
@@ -95,7 +96,7 @@ namespace TestWeb2.Models
 
         }
 
-        public DbSet<MP> MP { get; set; }
+        public DbSet<Menu> Menus { get; set; }
 
 
 

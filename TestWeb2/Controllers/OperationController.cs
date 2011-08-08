@@ -12,15 +12,16 @@ namespace TestWeb2.Controllers
 { 
     public class OperationController : Controller
     {
-        private RTDPDbContext db = new RTDPDbContext();
+        //private RTDPDbContext db = new RTDPDbContext();
 
+        private RTSafe.RTDP.Permission.BLL.OperationManager om = new RTSafe.RTDP.Permission.BLL.OperationManager();
         //
-        // GET: /Operation/        
-
+        // GET: /Operation/
         public ViewResult Index(Guid id)
         {
             ViewBag.ModuleId = id;
-            return View(db.Operations.Where(c => c.ModuleId == id).ToList());
+            return View(om.Where(c => c.ModuleId == id).ToList());            
+            //return View(db.Operations.Where(c => c.ModuleId == id).ToList());
         }
 
         //
@@ -28,7 +29,7 @@ namespace TestWeb2.Controllers
 
         public ViewResult Details(Guid id)
         {
-            Operation operation = db.Operations.Find(id);
+            Operation operation = om.Find(id);//db.Operations.Find(id);
             return View(operation);
         }
 
@@ -50,8 +51,9 @@ namespace TestWeb2.Controllers
             if (ModelState.IsValid)
             {
                 operation.OperationId = Guid.NewGuid();
-                db.Operations.Add(operation);
-                db.SaveChanges();
+                om.Add(operation);
+                //db.Operations.Add(operation);
+                //db.SaveChanges();
                 return RedirectToAction("Index/" + operation.ModuleId.ToString());  
             }
 
@@ -63,7 +65,7 @@ namespace TestWeb2.Controllers
  
         public ActionResult Edit(Guid id)
         {
-            Operation operation = db.Operations.Find(id);
+            Operation operation = om.Find(id);//db.Operations.Find(id);
             return View(operation);
         }
 
@@ -75,8 +77,9 @@ namespace TestWeb2.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(operation).State = EntityState.Modified;
-                db.SaveChanges();
+                //db.Entry(operation).State = EntityState.Modified;
+                //db.SaveChanges();
+                om.Edit(operation);
                 return RedirectToAction("Index/" + operation.ModuleId.ToString());
             }
             return View(operation);
@@ -87,7 +90,7 @@ namespace TestWeb2.Controllers
  
         public ActionResult Delete(Guid id)
         {
-            Operation operation = db.Operations.Find(id);
+            Operation operation = om.Find(id);//db.Operations.Find(id);
             return View(operation);
         }
 
@@ -96,16 +99,17 @@ namespace TestWeb2.Controllers
 
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(Guid id)
-        {            
-            Operation operation = db.Operations.Find(id);
-            db.Operations.Remove(operation);
-            db.SaveChanges();
+        {
+            Operation operation = om.Find(id); //db.Operations.Find(id);
+            //db.Operations.Remove(operation);
+            //db.SaveChanges();
+            om.Delete(id);
             return RedirectToAction("Index/" + operation.ModuleId.ToString());
         }
 
         protected override void Dispose(bool disposing)
         {
-            db.Dispose();
+            om.Dispose();
             base.Dispose(disposing);
         }
 

@@ -32,8 +32,8 @@
                 @Html.ActionLink("Edit", "Edit", new { id = item.RoleId }) |
                 @Html.ActionLink("Details", "Details", new { id = item.RoleId }) |
                 @Html.ActionLink("Delete", "Delete", new { id = item.RoleId }) |
-                @Html.ActionLink("权限分配", "RoleOperation", new { roleId = item.RoleId })
-                
+                @Html.ActionLink("权限分配", "RoleOperation", new { id = item.RoleId })
+                @Html.ActionLink("菜单分配", "RoleMenu", new { id = item.RoleId })
             </td>
         </tr>
     }

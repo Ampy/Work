@@ -56,7 +56,7 @@
     <Compile Include="Role.cs" />
     <Compile Include="User.cs" />
     <Compile Include="UserGroup.cs" />
-    <Compile Include="MP.cs" />
+    <Compile Include="MenuEx.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />

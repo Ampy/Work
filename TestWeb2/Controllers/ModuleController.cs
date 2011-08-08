@@ -12,14 +12,15 @@ namespace TestWeb2.Controllers
 { 
     public class ModuleController : Controller
     {
-        private RTDPDbContext db = new RTDPDbContext();
+        private RTSafe.RTDP.Permission.BLL.ModuleManager mm = new RTSafe.RTDP.Permission.BLL.ModuleManager();
+        //    RTDPDbContext db = new RTDPDbContext();
 
         //
         // GET: /Module/
 
         public ViewResult Index()
         {
-            var m = db.Modules.Include(c=>c.Operations);
+            var m = mm.GetAllModules(false);// db.Modules.Include(c => c.Operations);
             return View(m);
         }
 
@@ -28,7 +29,7 @@ namespace TestWeb2.Controllers
 
         public ViewResult Details(Guid id)
         {
-            Module module = db.Modules.Find(id);
+            Module module = mm.Find(id); //db.Modules.Find(id);
             return View(module);
         }
 
@@ -49,8 +50,9 @@ namespace TestWeb2.Controllers
             if (ModelState.IsValid)
             {
                 module.ModuleId = Guid.NewGuid();
-                db.Modules.Add(module);
-                db.SaveChanges();
+                mm.Registe(module);
+                //db.Modules.Add(module);
+                //db.SaveChanges();
                 return RedirectToAction("Index");  
             }
 
@@ -62,7 +64,7 @@ namespace TestWeb2.Controllers
  
         public ActionResult Edit(Guid id)
         {
-            Module module = db.Modules.Find(id);
+            Module module = mm.Find(id); //db.Modules.Find(id);
             return View(module);
         }
 
@@ -74,8 +76,9 @@ namespace TestWeb2.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(module).State = EntityState.Modified;
-                db.SaveChanges();
+                //db.Entry(module).State = EntityState.Modified;
+                //db.SaveChanges();
+                mm.Edit(module);
                 return RedirectToAction("Index");
             }
             return View(module);
@@ -86,7 +89,7 @@ namespace TestWeb2.Controllers
  
         public ActionResult Delete(Guid id)
         {
-            Module module = db.Modules.Find(id);
+            Module module = mm.Find(id); //db.Modules.Find(id);
             return View(module);
         }
 
@@ -95,16 +98,16 @@ namespace TestWeb2.Controllers
 
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(Guid id)
-        {            
-            Module module = db.Modules.Find(id);
-            db.Modules.Remove(module);
-            db.SaveChanges();
+        {
+            //Module module = mm.Find(id); //db.Modules.Find(id);
+            mm.Unregiste(id); //db.Modules.Remove(module);
+            //db.SaveChanges();
             return RedirectToAction("Index");
         }
 
         protected override void Dispose(bool disposing)
         {
-            db.Dispose();
+            //db.Dispose();
             base.Dispose(disposing);
         }
     }

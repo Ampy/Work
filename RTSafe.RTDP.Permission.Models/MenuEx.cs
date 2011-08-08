@@ -6,12 +6,14 @@ using System.ComponentModel.DataAnnotations;
 
 namespace RTSafe.RTDP.Permission.Models
 {
-    public partial class RoleOperation
+    public partial class Menu
     {
+        [NotMapped]
+        public bool hasMenu { get; set; }
 
-        [Key]
-        public Guid RoleId { get; set; }
-        [Key]
-        public Guid OperationId { get; set; }
+        [NotMapped]
+        public Guid CurrentRoleId { get; set; }
+
+
     }
 }

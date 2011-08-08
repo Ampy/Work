@@ -31,9 +31,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.4.1.10331.0\lib\EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
@@ -45,14 +50,23 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccessDenyResult.cs" />
+    <Compile Include="BLL\ModuleManager.cs" />
+    <Compile Include="BLL\OperationManager.cs" />
+    <Compile Include="BLL\RoleManager.cs" />
+    <Compile Include="BLL\UserManager.cs" />
+    <Compile Include="BLL\MenuManager.cs" />
     <Compile Include="CheckPermissionAttribute.cs" />
+    <Compile Include="DAL\RTDPDbContext.cs" />
     <Compile Include="ICheckPermissionFilter.cs" />
+    <Compile Include="Interface\IMenu.cs" />
+    <Compile Include="Interface\IModule.cs" />
+    <Compile Include="Interface\IOperation.cs" />
+    <Compile Include="Interface\IRole.cs" />
+    <Compile Include="Interface\IUser.cs" />
     <Compile Include="RtMembershipProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="BLL\" />
-    <Folder Include="Interface\" />
     <Folder Include="MsSql\" />
   </ItemGroup>
   <ItemGroup>

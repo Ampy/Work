@@ -26,7 +26,7 @@ namespace RTSafe.RTDP.MVC
              //roleList.Add("Admin"); 
 
             RTSafe.RTDP.Permission.Models.User rtUser = new RTSafe.RTDP.Permission.Models.User();
-            rtUser.Id = Guid.NewGuid();
+            rtUser.UserId = Guid.NewGuid();
             rtUser.Name = userID;
 
             RTSafe.RTDP.Permission.Models.Role role = new RTSafe.RTDP.Permission.Models.Role();

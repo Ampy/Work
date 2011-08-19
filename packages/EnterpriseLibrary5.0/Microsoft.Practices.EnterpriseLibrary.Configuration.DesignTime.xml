@@ -164,6 +164,18 @@
             InitializeComponent
             </summary>
         </member>
+        <member name="T:Microsoft.Practices.EnterpriseLibrary.Configuration.Design.ComponentModel.Editors.MetadataTypesRetriever">
+            <summary>
+            Retrieves types from assemblies, skipping the types that cannot be loaded.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Configuration.Design.ComponentModel.Editors.MetadataTypesRetriever.GetAvailableTypes(System.Reflection.Assembly)">
+            <summary>
+            Retrieves types from <paramref name="assembly"/>. 
+            </summary>
+            <param name="assembly">The assembly.</param>
+            <returns>The types that could be retrieved from the assembly.</returns>
+        </member>
         <member name="T:Microsoft.Practices.EnterpriseLibrary.Configuration.Design.ConfigurationContainer">
             <summary>
             The dependency injection container used by the Enterprise Library configuration designtime.
@@ -181,7 +193,19 @@
             <summary>
             Initializes an instance of <see cref="T:Microsoft.Practices.EnterpriseLibrary.Configuration.Design.ConfigurationContainer"/>
             </summary>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Configuration.Design.ConfigurationContainer.#ctor(Microsoft.Practices.EnterpriseLibrary.Configuration.Design.ViewModel.Services.PlatformProfile.Profile)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Practices.EnterpriseLibrary.Configuration.Design.ConfigurationContainer"/> class.
+            </summary>
+            <param name="profile">The profile.</param>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Configuration.Design.ConfigurationContainer.#ctor(System.IServiceProvider,Microsoft.Practices.EnterpriseLibrary.Configuration.Design.ViewModel.Services.PlatformProfile.Profile)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Practices.EnterpriseLibrary.Configuration.Design.ConfigurationContainer"/> class.
+            </summary>
             <param name="serviceProvider">A service provider to resolve services.</param>
+            <param name="profile">The profile.</param>
         </member>
         <member name="M:Microsoft.Practices.EnterpriseLibrary.Configuration.Design.ConfigurationContainer.DiscoverSubstituteTypesFromAssemblies">
             <summary>
@@ -7007,7 +7031,7 @@
             Occurs when the selected <see cref="T:Microsoft.Practices.EnterpriseLibrary.Configuration.Design.ViewModel.ElementViewModel"/> changed.
             </summary>
         </member>
-        <member name="M:Microsoft.Practices.EnterpriseLibrary.Configuration.Design.ApplicationViewModel.#ctor(Microsoft.Practices.EnterpriseLibrary.Configuration.Design.Configuration.Design.HostAdapterV5.IUIServiceWpf,Microsoft.Practices.EnterpriseLibrary.Configuration.Design.ViewModel.ConfigurationSourceModel,Microsoft.Practices.EnterpriseLibrary.Configuration.Design.ViewModel.Services.ElementLookup,Microsoft.Practices.Unity.IUnityContainer,Microsoft.Practices.EnterpriseLibrary.Configuration.Design.ViewModel.Services.MenuCommandService,Microsoft.Practices.EnterpriseLibrary.Configuration.Design.ViewModel.ValidationModel)">
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Configuration.Design.ApplicationViewModel.#ctor(Microsoft.Practices.EnterpriseLibrary.Configuration.Design.Configuration.Design.HostAdapterV5.IUIServiceWpf,Microsoft.Practices.EnterpriseLibrary.Configuration.Design.ViewModel.ConfigurationSourceModel,Microsoft.Practices.EnterpriseLibrary.Configuration.Design.ViewModel.Services.ElementLookup,Microsoft.Practices.Unity.IUnityContainer,Microsoft.Practices.EnterpriseLibrary.Configuration.Design.ViewModel.Services.MenuCommandService,Microsoft.Practices.EnterpriseLibrary.Configuration.Design.ViewModel.ValidationModel,Microsoft.Practices.EnterpriseLibrary.Configuration.Design.ViewModel.Services.PlatformProfile.Profile)">
             <summary>
             Initializes a new instance of <see cref="T:Microsoft.Practices.EnterpriseLibrary.Configuration.Design.ApplicationViewModel"/>.
             </summary>
@@ -7017,6 +7041,7 @@
             <param name="builder">The <see cref="T:Microsoft.Practices.Unity.IUnityContainer"/> instance that should be used to create view model instances with.</param>
             <param name="menuCommandService">The <see cref="T:Microsoft.Practices.EnterpriseLibrary.Configuration.Design.ViewModel.Services.MenuCommandService"/> that should be used to look up top-level <see cref="T:Microsoft.Practices.EnterpriseLibrary.Configuration.Design.ViewModel.CommandModel"/> instances.</param>
             <param name="validationModel">The <see cref="P:Microsoft.Practices.EnterpriseLibrary.Configuration.Design.ApplicationViewModel.ValidationModel"/> that should be used to add validation errors and warnings to.</param>
+            <param name="profile">The <see cref="T:Microsoft.Practices.EnterpriseLibrary.Configuration.Design.ViewModel.Services.PlatformProfile.Profile"/> that should be used to filter UI elements based on the platform.</param>
         </member>
         <member name="M:Microsoft.Practices.EnterpriseLibrary.Configuration.Design.ApplicationViewModel.NewEnvironment">
             <summary>
@@ -10847,6 +10872,178 @@
             The <see cref="T:System.ComponentModel.TypeConverter"/> that converts the internal overridden value to a string that can be stored in the delta configuration file.<br/>
             </value>
         </member>
+        <member name="T:Microsoft.Practices.EnterpriseLibrary.Configuration.Design.ViewModel.Services.AssemblyNameMatcher">
+            <summary>
+            Provides a utility method to match assemblies with assembly names;
+            </summary>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Configuration.Design.ViewModel.Services.AssemblyNameMatcher.Matches(System.Reflection.Assembly,System.Reflection.AssemblyName)">
+            <summary>
+            Matches the name of <paramref name="assembly"/> with <paramref name="assemblyNameToMatch"/>.
+            </summary>
+            <param name="assembly">The assembly to match.</param>
+            <param name="assemblyNameToMatch">The assembly name to match.</param>
+            <returns><see langword="true"/> if the name matches; otherwise <see langword="false"/>.</returns>
+        </member>
+        <member name="T:Microsoft.Practices.EnterpriseLibrary.Configuration.Design.ViewModel.Services.PlatformProfile.AssemblyMatchFilter">
+            <summary>
+            Represent a filter that match all types in the specified assembly.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Practices.EnterpriseLibrary.Configuration.Design.ViewModel.Services.PlatformProfile.MatchFilter">
+            <summary>
+            Represent a type filter.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Configuration.Design.ViewModel.Services.PlatformProfile.MatchFilter.Match(System.Type)">
+            <summary>
+             Returns true if the type match the current type filter.
+            </summary>
+            <param name="type">Type to match</param>
+            <returns>True is match</returns>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Configuration.Design.ViewModel.Services.PlatformProfile.MatchFilter.MatchKind">
+            <summary>
+            The match kind (allow, deny).
+            </summary>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Configuration.Design.ViewModel.Services.PlatformProfile.AssemblyMatchFilter.Match(System.Type)">
+            <summary>
+            Returns true if the type match the current type filter.
+            </summary>
+            <param name="type">Type to match.</param>
+            <returns>True if match.</returns>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Configuration.Design.ViewModel.Services.PlatformProfile.AssemblyMatchFilter.Name">
+            <summary>
+            Gets or sets the assembly to match.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Practices.EnterpriseLibrary.Configuration.Design.ViewModel.Services.PlatformProfile.AddBlockCommandMatchFilter">
+            <summary>
+            Represent a filter that match AddApplicationBlockCommand instances by type and/or section name.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Practices.EnterpriseLibrary.Configuration.Design.ViewModel.Services.PlatformProfile.CommandMatchFilter">
+            <summary>
+            Represent a filter that match CommandModel instances by type.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Practices.EnterpriseLibrary.Configuration.Design.ViewModel.Services.PlatformProfile.TypeMatchFilter">
+            <summary>
+            Represent a filter that match a specific type.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Configuration.Design.ViewModel.Services.PlatformProfile.TypeMatchFilter.Match(System.Type)">
+            <summary>
+            Returns true if the type match the current type filter.
+            </summary>
+            <param name="type">Type to match</param>
+            <returns>True if match.</returns>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Configuration.Design.ViewModel.Services.PlatformProfile.TypeMatchFilter.Name">
+            <summary>
+            Type name to be filtered.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Configuration.Design.ViewModel.Services.PlatformProfile.TypeMatchFilter.MatchSubclasses">
+            <summary>
+            Assembly to be filtered
+            </summary>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Configuration.Design.ViewModel.Services.PlatformProfile.CommandMatchFilter.Match(Microsoft.Practices.EnterpriseLibrary.Configuration.Design.ViewModel.CommandModel)">
+            <summary>
+             Returns true if the command instance type match the current type filter.
+            </summary>
+            <param name="command">Command to match</param>
+            <returns>True is match</returns>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Configuration.Design.ViewModel.Services.PlatformProfile.AddBlockCommandMatchFilter.Match(Microsoft.Practices.EnterpriseLibrary.Configuration.Design.ViewModel.CommandModel)">
+            <summary>
+             Returns true if the type match the current type filter and section name.
+            </summary>
+            <param name="command">Command to match</param>
+            <returns>True is match</returns>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Configuration.Design.ViewModel.Services.PlatformProfile.AddBlockCommandMatchFilter.SectionName">
+            <summary>
+            Gets or sets the section name to match.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Practices.EnterpriseLibrary.Configuration.Design.ViewModel.Services.PlatformProfile.MatchKind">
+            <summary>
+            Provides attributes for the filter of types.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Practices.EnterpriseLibrary.Configuration.Design.ViewModel.Services.PlatformProfile.MatchKind.Deny">
+            <summary>
+            Type or instance is denied.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Practices.EnterpriseLibrary.Configuration.Design.ViewModel.Services.PlatformProfile.MatchKind.Allow">
+            <summary>
+            Type or instance is allowed.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Practices.EnterpriseLibrary.Configuration.Design.ViewModel.Services.PlatformProfile.Profile">
+            <summary>
+            Represent a discovery profile.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Configuration.Design.ViewModel.Services.PlatformProfile.Profile.#ctor">
+            <summary>
+            Create a default instance of a discovery profile.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Configuration.Design.ViewModel.Services.PlatformProfile.Profile.Check(System.Type)">
+            <summary>
+            Checks the type.
+            </summary>
+            <param name="type">The type.</param>
+            <returns>True if the type should be included.</returns>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Configuration.Design.ViewModel.Services.PlatformProfile.Profile.Check(Microsoft.Practices.EnterpriseLibrary.Configuration.Design.ViewModel.CommandModel)">
+            <summary>
+            Checks a AddApplicationBlockCommand.
+            </summary>
+            <param name="command">The command instance.</param>
+            <returns>True if the command should be included.</returns>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Configuration.Design.ViewModel.Services.PlatformProfile.Profile.EnvironmentCommandsEnabled">
+            <summary>
+            Environment command enabled.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Configuration.Design.ViewModel.Services.PlatformProfile.Profile.Platform">
+            <summary>
+            Targeted platform.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Configuration.Design.ViewModel.Services.PlatformProfile.Profile.ApplicationTitleFormat">
+            <summary>
+            Application title format.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Configuration.Design.ViewModel.Services.PlatformProfile.Profile.MatchFilters">
+            <summary>
+            A collection of type filters.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Configuration.Design.ViewModel.Services.PlatformProfile.Profile.AssemblyMatchFilters">
+            <summary>
+            Return all the AssemblyMatchFilter in the MatchFilters array.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Configuration.Design.ViewModel.Services.PlatformProfile.Profile.TypeMatchFilters">
+            <summary>
+            Return all the TypeMatchFilter in the MatchFilters array.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Configuration.Design.ViewModel.Services.PlatformProfile.Profile.CommandMatchFilters">
+            <summary>
+            Return all the CommandMatchFilter in the MatchFilters array.
+            </summary>
+        </member>
         <member name="T:Microsoft.Practices.EnterpriseLibrary.Configuration.Design.ViewModel.TypeNameParserHelper">
             <summary>
             The <see cref="T:Microsoft.Practices.EnterpriseLibrary.Configuration.Design.ViewModel.TypeNameParserHelper"/> attempts to parse a string version of a type name 
@@ -11443,6 +11640,11 @@
             Moves a <see cref="T:Microsoft.Practices.EnterpriseLibrary.Configuration.Design.ViewModel.CollectionElementViewModel"/> in this collection one position later in the <see cref="P:Microsoft.Practices.EnterpriseLibrary.Configuration.Design.ViewModel.ElementViewModel.ChildElements"/> sequence.
             </summary>
             <param name="elementViewModel">The <see cref="T:Microsoft.Practices.EnterpriseLibrary.Configuration.Design.ViewModel.CollectionElementViewModel"/> in this collection to move.</param>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Configuration.Design.ViewModel.ElementCollectionViewModel.ConfigurationTypesService">
+            <summary>
+            The current DiscoverDerivedConfigurationTypesService.
+            </summary>
         </member>
         <member name="P:Microsoft.Practices.EnterpriseLibrary.Configuration.Design.ViewModel.ElementCollectionViewModel.CollectionElementType">
             <summary>
@@ -12066,11 +12268,6 @@
             Provides the title of the <see cref="T:Microsoft.Practices.EnterpriseLibrary.Configuration.Design.ViewModel.CommandModel"/> command.  Typically this will appear as the title to a menu in the configuration tool.
             </summary>
         </member>
-        <member name="P:Microsoft.Practices.EnterpriseLibrary.Configuration.Design.ViewModel.ToggleExpandedCommand.KeyGesture">
-            <summary>
-            Defines the key gesture used for this command.
-            </summary>
-        </member>
         <member name="T:Microsoft.Practices.EnterpriseLibrary.Configuration.Design.ViewModel.Services.AnnotationService">
             <summary>
             Service class that allows metadata to be added to classes by means of a body class.
@@ -12233,7 +12430,7 @@
             </remarks>
             <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.Design.HandlesSectionAttribute"/>
         </member>
-        <member name="M:Microsoft.Practices.EnterpriseLibrary.Configuration.Design.ViewModel.Services.MenuCommandService.#ctor(Microsoft.Practices.Unity.IUnityContainer,Microsoft.Practices.EnterpriseLibrary.Configuration.Design.ViewModel.Services.AssemblyLocator,Microsoft.Practices.EnterpriseLibrary.Configuration.Design.ViewModel.Services.ConfigurationSourceDependency)">
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Configuration.Design.ViewModel.Services.MenuCommandService.#ctor(Microsoft.Practices.Unity.IUnityContainer,Microsoft.Practices.EnterpriseLibrary.Configuration.Design.ViewModel.Services.AssemblyLocator,Microsoft.Practices.EnterpriseLibrary.Configuration.Design.ViewModel.Services.ConfigurationSourceDependency,Microsoft.Practices.EnterpriseLibrary.Configuration.Design.ViewModel.Services.PlatformProfile.Profile)">
             <summary>
             This constructor supports the configuration design-time and is not intended to be used directly from your code.
             </summary>
@@ -12283,6 +12480,18 @@
             <summary>
             This constructor supports the configuration design-time and is not intended to be used directly from your code.
             </summary>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Configuration.Design.ViewModel.Services.DiscoverDerivedConfigurationTypesService.#ctor(Microsoft.Practices.EnterpriseLibrary.Configuration.Design.ViewModel.Services.AssemblyLocator,Microsoft.Practices.EnterpriseLibrary.Configuration.Design.ViewModel.Services.PlatformProfile.Profile)">
+            <summary>
+            This constructor supports the configuration design-time and is not intended to be used directly from your code.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Configuration.Design.ViewModel.Services.DiscoverDerivedConfigurationTypesService.CheckType(System.Type)">
+            <summary>
+            Check if type is filtered by the profile or not.
+            </summary>
+            <param name="type">The actual type.</param>
+            <returns>True is type should be included.</returns>
         </member>
         <member name="M:Microsoft.Practices.EnterpriseLibrary.Configuration.Design.ViewModel.Services.DiscoverDerivedConfigurationTypesService.FindAvailableConfigurationElementTypes(System.Type)">
             <summary>

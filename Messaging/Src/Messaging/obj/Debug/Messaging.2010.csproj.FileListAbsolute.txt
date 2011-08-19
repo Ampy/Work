@@ -1,0 +1,10 @@
+D:\Work\RTDP\Messaging\Src\Logging\obj\Debug\ResolveAssemblyReference.cache
+D:\Work\RTDP\Messaging\Src\Logging\obj\Debug\GenerateResource.read.1.tlog
+D:\Work\RTDP\Messaging\Src\Logging\obj\Debug\GenerateResource.write.1.tlog
+D:\Work\RTDP\Messaging\Src\Logging\obj\Debug\RTSafe.RTDP.Messaging.Configuration.DesignResources.resources
+D:\Work\RTDP\Messaging\Src\Logging\obj\Debug\RTSafe.RTDP.Messaging.Configuration.Manageability.Properties.Resources.resources
+D:\Work\RTDP\Messaging\Src\Logging\obj\Debug\RTSafe.RTDP.Messaging.Properties.Resources.resources
+D:\Work\RTDP\bin\Debug\RTSafe.RTDP.Messaging.dll
+D:\Work\RTDP\bin\Debug\RTSafe.RTDP.Messaging.pdb
+D:\Work\RTDP\Messaging\Src\Logging\obj\Debug\RTSafe.RTDP.Messaging.dll
+D:\Work\RTDP\Messaging\Src\Logging\obj\Debug\RTSafe.RTDP.Messaging.pdb

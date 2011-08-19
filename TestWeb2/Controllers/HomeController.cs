@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.Mvc;
 using RTSafe.RTDP.MVC;
 using RTSafe.RTDP.Permission;
+using RTSafe.RTDP.Messaging;
+using Microsoft.Practices.EnterpriseLibrary.Logging;
 
 namespace TestWeb2.Controllers
 {
@@ -14,6 +16,24 @@ namespace TestWeb2.Controllers
         {
             ViewBag.Message = "Welcome to ASP.NET MVC!";
             
+            return View();
+        }
+
+        [HttpPost]
+        public ViewResult Index(FormCollection forms)
+        {
+            //Messager.Write("OK");
+            //Logger.Write("OK");
+            MsgEntry ms = new MsgEntry();
+            ms.Message = "测试！";
+            ms.CreateTime = DateTime.Now;
+            ms.Receiver = "JLX";
+            ms.Sender = "MP";
+            ms.Severity = System.Diagnostics.TraceEventType.Information;
+            ms.Priority = 0;
+            ms.Categories.Add("SMS");
+            ms.Categories.Add("EMAIL");
+            Messager.Write(ms);
             return View();
         }
 

@@ -1,0 +1,280 @@
+----------------------------------------
+Timestamp: 2011/8/16 9:10:56
+
+Message: Processing of the message failed. See summary information below for more information. Should this problem persist, stop the service and check the configuration file(s) for possible error(s) in the configuration of the categories and sinks.
+
+
+Summary for Enterprise Library Distributor Service:
+======================================
+--> 
+Message: 
+Timestamp: 2011/8/16 9:10:56
+Message: MP
+Category: BrowseLog
+Priority: -1
+EventId: 1
+Severity: Information
+Title:
+Machine: A-18
+App Domain: MPTest.vshost.exe
+ProcessId: Unable to read intrinsic property.  Error message: 安全透明方法“Microsoft.Practices.EnterpriseLibrary.Messaging.LogEntryContext.GetCurrentProcessId()”尝试通过方法“Microsoft.Practices.EnterpriseLibrary.Messaging.NativeMethods.GetCurrentProcessId()”调用本机代码失败。方法必须是安全关键的或安全可靠关键的，才能调用本机代码。
+Process Name: Unable to read intrinsic property.  Error message: 安全透明方法“Microsoft.Practices.EnterpriseLibrary.Messaging.LogEntryContext.GetProcessName()”尝试通过方法“Microsoft.Practices.EnterpriseLibrary.Messaging.NativeMethods.GetModuleHandle(System.String)”调用本机代码失败。方法必须是安全关键的或安全可靠关键的，才能调用本机代码。
+Thread Name: 
+Win32 ThreadId:Unable to read intrinsic property.  Error message: 安全透明方法“Microsoft.Practices.EnterpriseLibrary.Messaging.LogEntryContext.GetCurrentThreadId()”尝试通过方法“Microsoft.Practices.EnterpriseLibrary.Messaging.NativeMethods.GetCurrentThreadId()”调用本机代码失败。方法必须是安全关键的或安全可靠关键的，才能调用本机代码。
+Extended Properties: 
+--> MachineName: A-18
+--> TimeStamp: 2011/8/16 9:10:56
+--> FullName: Microsoft.Practices.EnterpriseLibrary.Messaging, Version=5.0.505.0, Culture=neutral, PublicKeyToken=null
+--> AppDomainName: MPTest.vshost.exe
+--> WindowsIdentity: RTSAFEDEV\mengp
+
+Exception Information Details:
+======================================
+Exception Type: System.MethodAccessException
+Message: 安全透明方法“Microsoft.Practices.EnterpriseLibrary.Messaging.ContextItems.GetContextItems()”尝试访问安全关键方法“System.Runtime.Remoting.Messaging.CallContext.GetData(System.String)”失败。
+Data: System.Collections.ListDictionaryInternal
+TargetSite: System.Collections.Hashtable GetContextItems()
+HelpLink: NULL
+Source: Microsoft.Practices.EnterpriseLibrary.Messaging
+
+StackTrace Information Details: 
+======================================
+   在 Microsoft.Practices.EnterpriseLibrary.Messaging.ContextItems.GetContextItems() 位置 D:\Work\RTDP\Messaging\Src\Logging\ContextItems.cs:行号 108
+   在 Microsoft.Practices.EnterpriseLibrary.Messaging.ContextItems.ProcessContextItems(MsgEntry log) 位置 D:\Work\RTDP\Messaging\Src\Logging\ContextItems.cs:行号 86
+   在 Microsoft.Practices.EnterpriseLibrary.Messaging.MsgWriterImpl.ProcessLog(MsgEntry log, TraceEventCache traceEventCache) 位置 D:\Work\RTDP\Messaging\Src\Logging\MsgWriterImpl.cs:行号 548
+   在 Microsoft.Practices.EnterpriseLibrary.Messaging.MsgWriterImpl.<>c__DisplayClass1.<Write>b__0() 位置 D:\Work\RTDP\Messaging\Src\Logging\MsgWriterImpl.cs:行号 764
+
+Category: 
+
+Priority: -1
+
+EventId: 6352
+
+Severity: Error
+
+Title:
+
+Machine: A-18
+
+App Domain: MPTest.vshost.exe
+
+ProcessId: Unable to read intrinsic property.  Error message: 安全透明方法“Microsoft.Practices.EnterpriseLibrary.Messaging.LogEntryContext.GetCurrentProcessId()”尝试通过方法“Microsoft.Practices.EnterpriseLibrary.Messaging.NativeMethods.GetCurrentProcessId()”调用本机代码失败。方法必须是安全关键的或安全可靠关键的，才能调用本机代码。
+
+Process Name: Unable to read intrinsic property.  Error message: 安全透明方法“Microsoft.Practices.EnterpriseLibrary.Messaging.LogEntryContext.GetProcessName()”尝试通过方法“Microsoft.Practices.EnterpriseLibrary.Messaging.NativeMethods.GetModuleHandle(System.String)”调用本机代码失败。方法必须是安全关键的或安全可靠关键的，才能调用本机代码。
+
+Thread Name: 
+
+Win32 ThreadId:Unable to read intrinsic property.  Error message: 安全透明方法“Microsoft.Practices.EnterpriseLibrary.Messaging.LogEntryContext.GetCurrentThreadId()”尝试通过方法“Microsoft.Practices.EnterpriseLibrary.Messaging.NativeMethods.GetCurrentThreadId()”调用本机代码失败。方法必须是安全关键的或安全可靠关键的，才能调用本机代码。
+
+Extended Properties: 
+----------------------------------------
+----------------------------------------
+Timestamp: 2011/8/16 9:11:05
+
+Message: Processing of the message failed. See summary information below for more information. Should this problem persist, stop the service and check the configuration file(s) for possible error(s) in the configuration of the categories and sinks.
+
+
+Summary for Enterprise Library Distributor Service:
+======================================
+--> 
+Message: 
+Timestamp: 2011/8/16 9:11:05
+Message: MP
+Category: BrowseLog
+Priority: -1
+EventId: 1
+Severity: Information
+Title:
+Machine: A-18
+App Domain: MPTest.vshost.exe
+ProcessId: Unable to read intrinsic property.  Error message: 安全透明方法“Microsoft.Practices.EnterpriseLibrary.Messaging.LogEntryContext.GetCurrentProcessId()”尝试通过方法“Microsoft.Practices.EnterpriseLibrary.Messaging.NativeMethods.GetCurrentProcessId()”调用本机代码失败。方法必须是安全关键的或安全可靠关键的，才能调用本机代码。
+Process Name: Unable to read intrinsic property.  Error message: 安全透明方法“Microsoft.Practices.EnterpriseLibrary.Messaging.LogEntryContext.GetProcessName()”尝试通过方法“Microsoft.Practices.EnterpriseLibrary.Messaging.NativeMethods.GetModuleHandle(System.String)”调用本机代码失败。方法必须是安全关键的或安全可靠关键的，才能调用本机代码。
+Thread Name: 
+Win32 ThreadId:Unable to read intrinsic property.  Error message: 安全透明方法“Microsoft.Practices.EnterpriseLibrary.Messaging.LogEntryContext.GetCurrentThreadId()”尝试通过方法“Microsoft.Practices.EnterpriseLibrary.Messaging.NativeMethods.GetCurrentThreadId()”调用本机代码失败。方法必须是安全关键的或安全可靠关键的，才能调用本机代码。
+Extended Properties: 
+--> MachineName: A-18
+--> TimeStamp: 2011/8/16 9:11:05
+--> FullName: Microsoft.Practices.EnterpriseLibrary.Messaging, Version=5.0.505.0, Culture=neutral, PublicKeyToken=null
+--> AppDomainName: MPTest.vshost.exe
+--> WindowsIdentity: RTSAFEDEV\mengp
+
+Exception Information Details:
+======================================
+Exception Type: System.MethodAccessException
+Message: 安全透明方法“Microsoft.Practices.EnterpriseLibrary.Messaging.ContextItems.GetContextItems()”尝试访问安全关键方法“System.Runtime.Remoting.Messaging.CallContext.GetData(System.String)”失败。
+Data: System.Collections.ListDictionaryInternal
+TargetSite: System.Collections.Hashtable GetContextItems()
+HelpLink: NULL
+Source: Microsoft.Practices.EnterpriseLibrary.Messaging
+
+StackTrace Information Details: 
+======================================
+   在 Microsoft.Practices.EnterpriseLibrary.Messaging.ContextItems.GetContextItems() 位置 D:\Work\RTDP\Messaging\Src\Logging\ContextItems.cs:行号 108
+   在 Microsoft.Practices.EnterpriseLibrary.Messaging.ContextItems.ProcessContextItems(MsgEntry log) 位置 D:\Work\RTDP\Messaging\Src\Logging\ContextItems.cs:行号 86
+   在 Microsoft.Practices.EnterpriseLibrary.Messaging.MsgWriterImpl.ProcessLog(MsgEntry log, TraceEventCache traceEventCache) 位置 D:\Work\RTDP\Messaging\Src\Logging\MsgWriterImpl.cs:行号 548
+   在 Microsoft.Practices.EnterpriseLibrary.Messaging.MsgWriterImpl.<>c__DisplayClass1.<Write>b__0() 位置 D:\Work\RTDP\Messaging\Src\Logging\MsgWriterImpl.cs:行号 764
+
+Category: 
+
+Priority: -1
+
+EventId: 6352
+
+Severity: Error
+
+Title:
+
+Machine: A-18
+
+App Domain: MPTest.vshost.exe
+
+ProcessId: Unable to read intrinsic property.  Error message: 安全透明方法“Microsoft.Practices.EnterpriseLibrary.Messaging.LogEntryContext.GetCurrentProcessId()”尝试通过方法“Microsoft.Practices.EnterpriseLibrary.Messaging.NativeMethods.GetCurrentProcessId()”调用本机代码失败。方法必须是安全关键的或安全可靠关键的，才能调用本机代码。
+
+Process Name: Unable to read intrinsic property.  Error message: 安全透明方法“Microsoft.Practices.EnterpriseLibrary.Messaging.LogEntryContext.GetProcessName()”尝试通过方法“Microsoft.Practices.EnterpriseLibrary.Messaging.NativeMethods.GetModuleHandle(System.String)”调用本机代码失败。方法必须是安全关键的或安全可靠关键的，才能调用本机代码。
+
+Thread Name: 
+
+Win32 ThreadId:Unable to read intrinsic property.  Error message: 安全透明方法“Microsoft.Practices.EnterpriseLibrary.Messaging.LogEntryContext.GetCurrentThreadId()”尝试通过方法“Microsoft.Practices.EnterpriseLibrary.Messaging.NativeMethods.GetCurrentThreadId()”调用本机代码失败。方法必须是安全关键的或安全可靠关键的，才能调用本机代码。
+
+Extended Properties: 
+----------------------------------------
+----------------------------------------
+Timestamp: 2011/8/16 9:11:07
+
+Message: Processing of the message failed. See summary information below for more information. Should this problem persist, stop the service and check the configuration file(s) for possible error(s) in the configuration of the categories and sinks.
+
+
+Summary for Enterprise Library Distributor Service:
+======================================
+--> 
+Message: 
+Timestamp: 2011/8/16 9:11:07
+Message: MP
+Category: BrowseLog
+Priority: -1
+EventId: 1
+Severity: Information
+Title:
+Machine: A-18
+App Domain: MPTest.vshost.exe
+ProcessId: Unable to read intrinsic property.  Error message: 安全透明方法“Microsoft.Practices.EnterpriseLibrary.Messaging.LogEntryContext.GetCurrentProcessId()”尝试通过方法“Microsoft.Practices.EnterpriseLibrary.Messaging.NativeMethods.GetCurrentProcessId()”调用本机代码失败。方法必须是安全关键的或安全可靠关键的，才能调用本机代码。
+Process Name: Unable to read intrinsic property.  Error message: 安全透明方法“Microsoft.Practices.EnterpriseLibrary.Messaging.LogEntryContext.GetProcessName()”尝试通过方法“Microsoft.Practices.EnterpriseLibrary.Messaging.NativeMethods.GetModuleHandle(System.String)”调用本机代码失败。方法必须是安全关键的或安全可靠关键的，才能调用本机代码。
+Thread Name: 
+Win32 ThreadId:Unable to read intrinsic property.  Error message: 安全透明方法“Microsoft.Practices.EnterpriseLibrary.Messaging.LogEntryContext.GetCurrentThreadId()”尝试通过方法“Microsoft.Practices.EnterpriseLibrary.Messaging.NativeMethods.GetCurrentThreadId()”调用本机代码失败。方法必须是安全关键的或安全可靠关键的，才能调用本机代码。
+Extended Properties: 
+--> MachineName: A-18
+--> TimeStamp: 2011/8/16 9:11:07
+--> FullName: Microsoft.Practices.EnterpriseLibrary.Messaging, Version=5.0.505.0, Culture=neutral, PublicKeyToken=null
+--> AppDomainName: MPTest.vshost.exe
+--> WindowsIdentity: RTSAFEDEV\mengp
+
+Exception Information Details:
+======================================
+Exception Type: System.MethodAccessException
+Message: 安全透明方法“Microsoft.Practices.EnterpriseLibrary.Messaging.ContextItems.GetContextItems()”尝试访问安全关键方法“System.Runtime.Remoting.Messaging.CallContext.GetData(System.String)”失败。
+Data: System.Collections.ListDictionaryInternal
+TargetSite: System.Collections.Hashtable GetContextItems()
+HelpLink: NULL
+Source: Microsoft.Practices.EnterpriseLibrary.Messaging
+
+StackTrace Information Details: 
+======================================
+   在 Microsoft.Practices.EnterpriseLibrary.Messaging.ContextItems.GetContextItems() 位置 D:\Work\RTDP\Messaging\Src\Logging\ContextItems.cs:行号 108
+   在 Microsoft.Practices.EnterpriseLibrary.Messaging.ContextItems.ProcessContextItems(MsgEntry log) 位置 D:\Work\RTDP\Messaging\Src\Logging\ContextItems.cs:行号 86
+   在 Microsoft.Practices.EnterpriseLibrary.Messaging.MsgWriterImpl.ProcessLog(MsgEntry log, TraceEventCache traceEventCache) 位置 D:\Work\RTDP\Messaging\Src\Logging\MsgWriterImpl.cs:行号 548
+   在 Microsoft.Practices.EnterpriseLibrary.Messaging.MsgWriterImpl.<>c__DisplayClass1.<Write>b__0() 位置 D:\Work\RTDP\Messaging\Src\Logging\MsgWriterImpl.cs:行号 764
+
+Category: 
+
+Priority: -1
+
+EventId: 6352
+
+Severity: Error
+
+Title:
+
+Machine: A-18
+
+App Domain: MPTest.vshost.exe
+
+ProcessId: Unable to read intrinsic property.  Error message: 安全透明方法“Microsoft.Practices.EnterpriseLibrary.Messaging.LogEntryContext.GetCurrentProcessId()”尝试通过方法“Microsoft.Practices.EnterpriseLibrary.Messaging.NativeMethods.GetCurrentProcessId()”调用本机代码失败。方法必须是安全关键的或安全可靠关键的，才能调用本机代码。
+
+Process Name: Unable to read intrinsic property.  Error message: 安全透明方法“Microsoft.Practices.EnterpriseLibrary.Messaging.LogEntryContext.GetProcessName()”尝试通过方法“Microsoft.Practices.EnterpriseLibrary.Messaging.NativeMethods.GetModuleHandle(System.String)”调用本机代码失败。方法必须是安全关键的或安全可靠关键的，才能调用本机代码。
+
+Thread Name: 
+
+Win32 ThreadId:Unable to read intrinsic property.  Error message: 安全透明方法“Microsoft.Practices.EnterpriseLibrary.Messaging.LogEntryContext.GetCurrentThreadId()”尝试通过方法“Microsoft.Practices.EnterpriseLibrary.Messaging.NativeMethods.GetCurrentThreadId()”调用本机代码失败。方法必须是安全关键的或安全可靠关键的，才能调用本机代码。
+
+Extended Properties: 
+----------------------------------------
+----------------------------------------
+Timestamp: 2011/8/16 9:11:55
+
+Message: Processing of the message failed. See summary information below for more information. Should this problem persist, stop the service and check the configuration file(s) for possible error(s) in the configuration of the categories and sinks.
+
+
+Summary for Enterprise Library Distributor Service:
+======================================
+--> 
+Message: 
+Timestamp: 2011/8/16 9:11:55
+Message: MP
+Category: BrowseLog
+Priority: -1
+EventId: 1
+Severity: Information
+Title:
+Machine: A-18
+App Domain: MPTest.vshost.exe
+ProcessId: Unable to read intrinsic property.  Error message: 安全透明方法“Microsoft.Practices.EnterpriseLibrary.Messaging.LogEntryContext.GetCurrentProcessId()”尝试通过方法“Microsoft.Practices.EnterpriseLibrary.Messaging.NativeMethods.GetCurrentProcessId()”调用本机代码失败。方法必须是安全关键的或安全可靠关键的，才能调用本机代码。
+Process Name: Unable to read intrinsic property.  Error message: 安全透明方法“Microsoft.Practices.EnterpriseLibrary.Messaging.LogEntryContext.GetProcessName()”尝试通过方法“Microsoft.Practices.EnterpriseLibrary.Messaging.NativeMethods.GetModuleHandle(System.String)”调用本机代码失败。方法必须是安全关键的或安全可靠关键的，才能调用本机代码。
+Thread Name: 
+Win32 ThreadId:Unable to read intrinsic property.  Error message: 安全透明方法“Microsoft.Practices.EnterpriseLibrary.Messaging.LogEntryContext.GetCurrentThreadId()”尝试通过方法“Microsoft.Practices.EnterpriseLibrary.Messaging.NativeMethods.GetCurrentThreadId()”调用本机代码失败。方法必须是安全关键的或安全可靠关键的，才能调用本机代码。
+Extended Properties: 
+--> MachineName: A-18
+--> TimeStamp: 2011/8/16 9:11:55
+--> FullName: Microsoft.Practices.EnterpriseLibrary.Messaging, Version=5.0.505.0, Culture=neutral, PublicKeyToken=null
+--> AppDomainName: MPTest.vshost.exe
+--> WindowsIdentity: RTSAFEDEV\mengp
+
+Exception Information Details:
+======================================
+Exception Type: System.MethodAccessException
+Message: 安全透明方法“Microsoft.Practices.EnterpriseLibrary.Messaging.ContextItems.GetContextItems()”尝试访问安全关键方法“System.Runtime.Remoting.Messaging.CallContext.GetData(System.String)”失败。
+Data: System.Collections.ListDictionaryInternal
+TargetSite: System.Collections.Hashtable GetContextItems()
+HelpLink: NULL
+Source: Microsoft.Practices.EnterpriseLibrary.Messaging
+
+StackTrace Information Details: 
+======================================
+   在 Microsoft.Practices.EnterpriseLibrary.Messaging.ContextItems.GetContextItems() 位置 D:\Work\RTDP\Messaging\Src\Logging\ContextItems.cs:行号 108
+   在 Microsoft.Practices.EnterpriseLibrary.Messaging.ContextItems.ProcessContextItems(MsgEntry log) 位置 D:\Work\RTDP\Messaging\Src\Logging\ContextItems.cs:行号 86
+   在 Microsoft.Practices.EnterpriseLibrary.Messaging.MsgWriterImpl.ProcessLog(MsgEntry log, TraceEventCache traceEventCache) 位置 D:\Work\RTDP\Messaging\Src\Logging\MsgWriterImpl.cs:行号 548
+   在 Microsoft.Practices.EnterpriseLibrary.Messaging.MsgWriterImpl.<>c__DisplayClass1.<Write>b__0() 位置 D:\Work\RTDP\Messaging\Src\Logging\MsgWriterImpl.cs:行号 764
+
+Category: 
+
+Priority: -1
+
+EventId: 6352
+
+Severity: Error
+
+Title:
+
+Machine: A-18
+
+App Domain: MPTest.vshost.exe
+
+ProcessId: Unable to read intrinsic property.  Error message: 安全透明方法“Microsoft.Practices.EnterpriseLibrary.Messaging.LogEntryContext.GetCurrentProcessId()”尝试通过方法“Microsoft.Practices.EnterpriseLibrary.Messaging.NativeMethods.GetCurrentProcessId()”调用本机代码失败。方法必须是安全关键的或安全可靠关键的，才能调用本机代码。
+
+Process Name: Unable to read intrinsic property.  Error message: 安全透明方法“Microsoft.Practices.EnterpriseLibrary.Messaging.LogEntryContext.GetProcessName()”尝试通过方法“Microsoft.Practices.EnterpriseLibrary.Messaging.NativeMethods.GetModuleHandle(System.String)”调用本机代码失败。方法必须是安全关键的或安全可靠关键的，才能调用本机代码。
+
+Thread Name: 
+
+Win32 ThreadId:Unable to read intrinsic property.  Error message: 安全透明方法“Microsoft.Practices.EnterpriseLibrary.Messaging.LogEntryContext.GetCurrentThreadId()”尝试通过方法“Microsoft.Practices.EnterpriseLibrary.Messaging.NativeMethods.GetCurrentThreadId()”调用本机代码失败。方法必须是安全关键的或安全可靠关键的，才能调用本机代码。
+
+Extended Properties: 
+----------------------------------------

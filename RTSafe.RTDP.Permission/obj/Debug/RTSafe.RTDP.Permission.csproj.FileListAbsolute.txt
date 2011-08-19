@@ -1,11 +1,11 @@
-D:\Work\RTDP\RTSafe.RTDP.Permission\obj\Debug\ResolveAssemblyReference.cache
 D:\Work\RTDP\RTSafe.RTDP.Permission\bin\Debug\RTSafe.RTDP.Permission.dll
 D:\Work\RTDP\RTSafe.RTDP.Permission\bin\Debug\RTSafe.RTDP.Permission.pdb
-D:\Work\RTDP\RTSafe.RTDP.Permission\obj\Debug\RTSafe.RTDP.Permission.dll
-D:\Work\RTDP\RTSafe.RTDP.Permission\obj\Debug\RTSafe.RTDP.Permission.pdb
+D:\Work\RTDP\RTSafe.RTDP.Permission\bin\Debug\EntityFramework.dll
 D:\Work\RTDP\RTSafe.RTDP.Permission\bin\Debug\RTSafe.RTDP.MVC.dll
 D:\Work\RTDP\RTSafe.RTDP.Permission\bin\Debug\RTSafe.RTDP.Permission.Models.dll
 D:\Work\RTDP\RTSafe.RTDP.Permission\bin\Debug\RTSafe.RTDP.MVC.pdb
 D:\Work\RTDP\RTSafe.RTDP.Permission\bin\Debug\RTSafe.RTDP.Permission.Models.pdb
-D:\Work\RTDP\RTSafe.RTDP.Permission\bin\Debug\EntityFramework.dll
 D:\Work\RTDP\RTSafe.RTDP.Permission\bin\Debug\EntityFramework.xml
+D:\Work\RTDP\RTSafe.RTDP.Permission\obj\Debug\ResolveAssemblyReference.cache
+D:\Work\RTDP\RTSafe.RTDP.Permission\obj\Debug\RTSafe.RTDP.Permission.dll
+D:\Work\RTDP\RTSafe.RTDP.Permission\obj\Debug\RTSafe.RTDP.Permission.pdb

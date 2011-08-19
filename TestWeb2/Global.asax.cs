@@ -19,7 +19,7 @@ namespace TestWeb2
         {
             //this.BeginRequest += new EventHandler(MvcApplication_BeginRequest);
             //this.EndRequest += new EventHandler(MvcApplication_EndRequest);
-            //this.AcquireRequestState += new EventHandler(MvcApplication_AcquireRequestState);
+            this.AcquireRequestState += new EventHandler(MvcApplication_AcquireRequestState);
             
         }
 

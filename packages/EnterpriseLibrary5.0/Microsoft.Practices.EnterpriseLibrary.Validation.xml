@@ -5990,6 +5990,21 @@
             <remarks>This operation must be overriden by subclasses.</remarks>
             <returns>The created <see cref="T:Microsoft.Practices.EnterpriseLibrary.Validation.Validators.ContainsCharactersValidator"/>.</returns>
         </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Validation.Validators.ContainsCharactersValidatorAttribute.CharacterSet">
+            <summary>
+            The character set to be evaluated.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Validation.Validators.ContainsCharactersValidatorAttribute.ContainsCharacters">
+            <summary>
+            The mode to evaluate the character set.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Validation.Validators.ContainsCharactersValidatorAttribute.TypeId">
+            <summary>
+            Gets a unique identifier for this attribute.
+            </summary>
+        </member>
         <member name="T:Microsoft.Practices.EnterpriseLibrary.Validation.Validators.NullIgnoringValidatorWrapper">
             <summary>
             Validator that succeeds on null values and delegates validation of non-null values to another validator.
@@ -6265,7 +6280,7 @@
             Initializes a new instance of the <see cref="T:Microsoft.Practices.EnterpriseLibrary.Validation.Validators.PropertyComparisonValidatorAttribute"/> class.
             </summary>
             <param name="propertyToCompare">The name of the property to use when comparing a value.</param>
-            <param name="comparisonOperator">The <see cref="T:Microsoft.Practices.EnterpriseLibrary.Validation.Validators.ComparisonOperator"/> representing the kind of comparison to perform.</param>
+            <param name="comparisonOperator">The <see cref="P:Microsoft.Practices.EnterpriseLibrary.Validation.Validators.PropertyComparisonValidatorAttribute.ComparisonOperator"/> representing the kind of comparison to perform.</param>
         </member>
         <member name="M:Microsoft.Practices.EnterpriseLibrary.Validation.Validators.PropertyComparisonValidatorAttribute.DoCreateValidator(System.Type,System.Type,Microsoft.Practices.EnterpriseLibrary.Validation.MemberValueAccessBuilder,Microsoft.Practices.EnterpriseLibrary.Validation.ValidatorFactory)">
             <summary>
@@ -6295,6 +6310,21 @@
             <see cref="T:System.ComponentModel.DataAnnotations.ValidationAttribute"/> is declared.</param>
             <returns><see langword="true"/> if the specified value is valid; otherwise, <see langword="false"/>.</returns>
             <exception cref="T:System.NotSupportedException">when invoked on an attribute with a non-null ruleset.</exception>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Validation.Validators.PropertyComparisonValidatorAttribute.PropertyToCompare">
+            <summary>
+            The name of the property to use when comparing a value.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Validation.Validators.PropertyComparisonValidatorAttribute.ComparisonOperator">
+            <summary>
+            The <see cref="P:Microsoft.Practices.EnterpriseLibrary.Validation.Validators.PropertyComparisonValidatorAttribute.ComparisonOperator"/> representing the kind of comparison to perform.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Validation.Validators.PropertyComparisonValidatorAttribute.TypeId">
+            <summary>
+            Gets a unique identifier for this attribute.
+            </summary>
         </member>
         <member name="T:Microsoft.Practices.EnterpriseLibrary.Validation.Validators.PropertyValueValidator`1">
             <summary>
@@ -6402,22 +6432,42 @@
         </member>
         <member name="P:Microsoft.Practices.EnterpriseLibrary.Validation.Validators.RangeValidatorAttribute.LowerBound">
             <summary>
-            
+            The lower bound
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Validation.Validators.RangeValidatorAttribute.EffectiveLowerBound">
+            <summary>
+            The lower bound
             </summary>
         </member>
         <member name="P:Microsoft.Practices.EnterpriseLibrary.Validation.Validators.RangeValidatorAttribute.LowerBoundType">
             <summary>
-            
+            The indication of how to perform the lower bound check.
             </summary>
         </member>
         <member name="P:Microsoft.Practices.EnterpriseLibrary.Validation.Validators.RangeValidatorAttribute.UpperBound">
             <summary>
-            
+            The upper bound, or <see langword="null"/>.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Validation.Validators.RangeValidatorAttribute.EffectiveUpperBound">
+            <summary>
+            The upper bound
             </summary>
         </member>
         <member name="P:Microsoft.Practices.EnterpriseLibrary.Validation.Validators.RangeValidatorAttribute.UpperBoundType">
             <summary>
-            
+            The indication of how to perform the upper bound check.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Validation.Validators.RangeValidatorAttribute.BoundType">
+            <summary>
+            The type of the validated range.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Validation.Validators.RangeValidatorAttribute.TypeId">
+            <summary>
+            Gets a unique identifier for this attribute.
             </summary>
         </member>
         <member name="T:Microsoft.Practices.EnterpriseLibrary.Validation.Validators.RangeValidator`1">
@@ -6704,6 +6754,16 @@
             <remarks>This operation must be overriden by subclasses.</remarks>
             <returns>The created <see cref="T:Microsoft.Practices.EnterpriseLibrary.Validation.Validators.DomainValidatorAttribute"/>.</returns>
         </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Validation.Validators.DomainValidatorAttribute.Domain">
+            <summary>
+            List of values to be used in the validation.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Validation.Validators.DomainValidatorAttribute.TypeId">
+            <summary>
+            Gets a unique identifier for this attribute.
+            </summary>
+        </member>
         <member name="T:Microsoft.Practices.EnterpriseLibrary.Validation.Validators.RelativeDateTimeGenerator">
             <summary>
             
@@ -6977,6 +7037,41 @@
             <remarks>This operation must be overriden by subclasses.</remarks>
             <returns>The created <see cref="T:Microsoft.Practices.EnterpriseLibrary.Validation.Validators.RelativeDateTimeValidator"/>.</returns>
         </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Validation.Validators.RelativeDateTimeValidatorAttribute.LowerBound">
+            <summary>
+            The lower bound
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Validation.Validators.RelativeDateTimeValidatorAttribute.LowerUnit">
+            <summary>
+            The lower bound unit of time.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Validation.Validators.RelativeDateTimeValidatorAttribute.LowerBoundType">
+            <summary>
+            The indication of how to perform the lower bound check.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Validation.Validators.RelativeDateTimeValidatorAttribute.UpperBound">
+            <summary>
+            The upper bound
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Validation.Validators.RelativeDateTimeValidatorAttribute.UpperUnit">
+            <summary>
+            The upper bound unit of time.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Validation.Validators.RelativeDateTimeValidatorAttribute.UpperBoundType">
+            <summary>
+            The indication of how to perform the upper bound check.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Validation.Validators.RelativeDateTimeValidatorAttribute.TypeId">
+            <summary>
+            Gets a unique identifier for this attribute.
+            </summary>
+        </member>
         <member name="T:Microsoft.Practices.EnterpriseLibrary.Validation.Validators.TypeConversionValidator">
             <summary>
             Validates a string by checking it represents a value for a given type.
@@ -7061,6 +7156,16 @@
             <remarks>This operation must be overriden by subclasses.</remarks>
             <returns>The created <see cref="T:Microsoft.Practices.EnterpriseLibrary.Validation.Validators.TypeConversionValidator"/>.</returns>
         </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Validation.Validators.TypeConversionValidatorAttribute.TargetType">
+            <summary>
+            The target type. 
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Validation.Validators.TypeConversionValidatorAttribute.TypeId">
+            <summary>
+            Gets a unique identifier for this attribute.
+            </summary>
+        </member>
         <member name="T:Microsoft.Practices.EnterpriseLibrary.Validation.Validators.EnumConversionValidator">
             <summary>
             Validates a string by checking it represents a value for a given enum type.
@@ -7143,6 +7248,16 @@
             <param name="targetType">The type of object that will be validated by the validator.</param>
             <remarks>This operation must be overriden by subclasses.</remarks>
             <returns>The created <see cref="T:Microsoft.Practices.EnterpriseLibrary.Validation.Validators.EnumConversionValidator"/>.</returns>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Validation.Validators.EnumConversionValidatorAttribute.EnumType">
+            <summary>
+            The type of enum that should be validated. 
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Validation.Validators.EnumConversionValidatorAttribute.TypeId">
+            <summary>
+            Gets a unique identifier for this attribute.
+            </summary>
         </member>
         <member name="T:Microsoft.Practices.EnterpriseLibrary.Validation.Validators.HasSelfValidationAttribute">
             <summary>
@@ -7403,6 +7518,16 @@
             Gets the target ruleset for the validated objects.
             </summary>
         </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Validation.Validators.ObjectCollectionValidatorAttribute.TargetType">
+            <summary>
+            The target type
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Validation.Validators.ObjectCollectionValidatorAttribute.TypeId">
+            <summary>
+            Gets a unique identifier for this attribute.
+            </summary>
+        </member>
         <member name="T:Microsoft.Practices.EnterpriseLibrary.Validation.Validators.ObjectValidator">
             <summary>
             Performs validation on objects by applying the validation rules specified for a supplied type.
@@ -7519,6 +7644,11 @@
             Gets or set the ruleset for which the self validation method must be included.
             </summary>
         </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Validation.Validators.SelfValidationAttribute.TypeId">
+            <summary>
+            Gets a unique identifier for this attribute.
+            </summary>
+        </member>
         <member name="T:Microsoft.Practices.EnterpriseLibrary.Validation.Validators.SelfValidationValidator">
             <summary>
             Performs validation by invoking a method on the validated object.
@@ -7613,6 +7743,31 @@
             </summary>
             <param name="targetType">The type of object that will be validated by the validator.</param>
             <returns>The created <see cref="T:Microsoft.Practices.EnterpriseLibrary.Validation.Validator"/>.</returns>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Validation.Validators.DateTimeRangeValidatorAttribute.LowerBound">
+            <summary>
+            The lower bound.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Validation.Validators.DateTimeRangeValidatorAttribute.LowerBoundType">
+            <summary>
+            The bound type for the lower bound.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Validation.Validators.DateTimeRangeValidatorAttribute.UpperBound">
+            <summary>
+            The upper bound.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Validation.Validators.DateTimeRangeValidatorAttribute.UpperBoundType">
+            <summary>
+            The bound type for the upper bound.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Validation.Validators.DateTimeRangeValidatorAttribute.TypeId">
+            <summary>
+            Gets a unique identifier for this attribute.
+            </summary>
         </member>
         <member name="T:Microsoft.Practices.EnterpriseLibrary.Validation.Validators.GenericValidatorWrapper`1">
             <summary>
@@ -8008,6 +8163,31 @@
             <remarks>This operation must be overriden by subclasses.</remarks>
             <returns>The created <see cref="T:Microsoft.Practices.EnterpriseLibrary.Validation.Validators.RegexValidator"/>.</returns>
         </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Validation.Validators.RegexValidatorAttribute.Pattern">
+            <summary>
+            >The pattern to match.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Validation.Validators.RegexValidatorAttribute.Options">
+            <summary>
+            The <see cref="T:System.Text.RegularExpressions.RegexOptions"/> to use when matching.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Validation.Validators.RegexValidatorAttribute.PatternResourceName">
+            <summary>
+            The resource name containing the pattern for the regular expression.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Validation.Validators.RegexValidatorAttribute.PatternResourceType">
+            <summary>
+            The type containing the resource for the regular expression.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Validation.Validators.RegexValidatorAttribute.TypeId">
+            <summary>
+            Gets a unique identifier for this attribute.
+            </summary>
+        </member>
         <member name="T:Microsoft.Practices.EnterpriseLibrary.Validation.Validators.StringLengthValidator">
             <summary>
             Performs validation on strings by comparing their lengths to the specified boundaries. 
@@ -8194,6 +8374,31 @@
             <param name="targetType">The type of object that will be validated by the validator.</param>
             <returns>The created <see cref="T:Microsoft.Practices.EnterpriseLibrary.Validation.Validator"/>.</returns>
         </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Validation.Validators.StringLengthValidatorAttribute.LowerBound">
+            <summary>
+            The lower bound.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Validation.Validators.StringLengthValidatorAttribute.LowerBoundType">
+            <summary>
+            The indication of how to perform the lower bound check.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Validation.Validators.StringLengthValidatorAttribute.UpperBound">
+            <summary>
+            The upper bound.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Validation.Validators.StringLengthValidatorAttribute.UpperBoundType">
+            <summary>
+            The indication of how to perform the upper bound check.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Validation.Validators.StringLengthValidatorAttribute.TypeId">
+            <summary>
+            Gets a unique identifier for this attribute.
+            </summary>
+        </member>
         <member name="T:Microsoft.Practices.EnterpriseLibrary.Validation.Validators.ObjectValidatorAttribute">
             <summary>
             Represents an <see cref="T:Microsoft.Practices.EnterpriseLibrary.Validation.Validators.ObjectValidator"/>.
@@ -8238,12 +8443,27 @@
             Gets or sets the value indicating whether to validate based on the static type or the actual type.
             </summary>
         </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Validation.Validators.ObjectValidatorAttribute.TargetRuleset">
+            <summary>
+            The target ruleset.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Validation.Validators.ObjectValidatorAttribute.TypeId">
+            <summary>
+            Gets a unique identifier for this attribute.
+            </summary>
+        </member>
         <member name="T:Microsoft.Practices.EnterpriseLibrary.Validation.Validators.IgnoreNullsAttribute">
             <summary>
             Indicates that a <see langword="null"/> value is to be allowed by the validator represented by the validation
             attributes for the language element this attribute is bound.
             </summary>
             <seealso cref="T:Microsoft.Practices.EnterpriseLibrary.Validation.Validators.ValidatorAttribute"/>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Validation.Validators.IgnoreNullsAttribute.TypeId">
+            <summary>
+            Gets a unique identifier for this attribute.
+            </summary>
         </member>
         <member name="T:Microsoft.Practices.EnterpriseLibrary.Validation.Validators.NotNullValidator">
             <summary>
@@ -9336,6 +9556,11 @@
             <param name="targetType">The type of object that will be validated by the validator.</param>
             <returns>The created <see cref="T:Microsoft.Practices.EnterpriseLibrary.Validation.Validators.NotNullValidator"/>.</returns>
         </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Validation.Validators.NotNullValidatorAttribute.TypeId">
+            <summary>
+            Gets a unique identifier for this attribute.
+            </summary>
+        </member>
         <member name="T:Microsoft.Practices.EnterpriseLibrary.Validation.Validators.ValidatorCompositionAttribute">
             <summary>
             Indicates that the kind of composition to use when multiple <see cref="T:Microsoft.Practices.EnterpriseLibrary.Validation.Validators.ValidatorAttribute"/> instances
@@ -9348,6 +9573,16 @@
             Initializes a new instance of the <see cref="T:Microsoft.Practices.EnterpriseLibrary.Validation.Validators.ValidatorCompositionAttribute"/> class.
             </summary>
             <param name="compositionType">The <see cref="P:Microsoft.Practices.EnterpriseLibrary.Validation.Validators.ValidatorCompositionAttribute.CompositionType"/> to be used.</param>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Validation.Validators.ValidatorCompositionAttribute.CompositionType">
+            <summary>
+            The <see cref="P:Microsoft.Practices.EnterpriseLibrary.Validation.Validators.ValidatorCompositionAttribute.CompositionType"/> to be used.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Validation.Validators.ValidatorCompositionAttribute.TypeId">
+            <summary>
+            Gets a unique identifier for this attribute.
+            </summary>
         </member>
         <member name="T:Microsoft.Practices.EnterpriseLibrary.Validation.Validation">
             <summary>

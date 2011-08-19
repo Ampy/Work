@@ -38,7 +38,7 @@
       <HintPath>..\packages\EntityFramework.4.1.10331.0\lib\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=5.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=5.0.505.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\EnterpriseLibrary5.0\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
     </Reference>
@@ -139,7 +139,9 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\modernizr-1.7.js" />
     <Content Include="Scripts\modernizr-1.7.min.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -182,6 +184,10 @@
     <ProjectReference Include="..\RTSafe.RTDP.Logger\RTSafe.RTDP.Logger.csproj">
       <Project>{A7CA7745-8734-492E-AD4F-849CD48FC2E4}</Project>
       <Name>RTSafe.RTDP.Logger</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RTSafe.RTDP.Messaging\RTSafe.RTDP.Messaging.csproj">
+      <Project>{FD054CF4-FA2A-4574-B2D4-BE91014440FF}</Project>
+      <Name>RTSafe.RTDP.Messaging</Name>
     </ProjectReference>
     <ProjectReference Include="..\RTSafe.RTDP.MVC\RTSafe.RTDP.MVC.csproj">
       <Project>{B590F3F6-313B-446B-B491-F9D5385A0EB7}</Project>

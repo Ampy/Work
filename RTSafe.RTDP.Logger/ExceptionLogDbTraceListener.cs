@@ -34,8 +34,8 @@ namespace RTSafe.RTDP.Logger
                 if (data is LogEntry)
                 {
 
-                        LogEntry logEntry = data as LogEntry;
-                        Microsoft.Practices.EnterpriseLibrary.Logging.Logger.Write(logEntry);
+                    LogEntry MsgEntry = data as LogEntry;
+                        Microsoft.Practices.EnterpriseLibrary.Logging.Logger.Write(MsgEntry);
                 }
                 else if (data is string)
                 {

@@ -40,13 +40,13 @@ namespace RTSafe.RTDP.Logger
                 if (data is LogEntry)
                 {
 
-                        LogEntry logEntry = data as LogEntry;
+                    LogEntry MsgEntry = data as LogEntry;
                         BrowseTrace bt = new BrowseTrace();
-                        bt.SessionID = logEntry.ExtendedProperties["SessionId"].ToString();
-                        bt.UserID = Guid.Parse(logEntry.ExtendedProperties["UserId"].ToString());
+                        bt.SessionID = MsgEntry.ExtendedProperties["SessionId"].ToString();
+                        bt.UserID = Guid.Parse(MsgEntry.ExtendedProperties["UserId"].ToString());
                         bt.EnterTime = DateTime.Now;
-                        bt.PreviousUrl = logEntry.ExtendedProperties["PreviousUrl"].ToString();
-                        bt.NowUrl = logEntry.ExtendedProperties["NowUrl"].ToString();
+                        bt.PreviousUrl = MsgEntry.ExtendedProperties["PreviousUrl"].ToString();
+                        bt.NowUrl = MsgEntry.ExtendedProperties["NowUrl"].ToString();
                         bt.Save();
 
                 }
